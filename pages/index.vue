@@ -5,7 +5,7 @@
       <img
         src="@/assets/img/logo.svg"
         alt="unyqque logo"
-        class="w-[400px] h-[400px] md:w-[600px] md:h-[600px]"
+        class="w-[400px] h-[200px] md:w-[600px] md:h-[600px]"
       />
     </div>
     <div class="text-center mb-10">

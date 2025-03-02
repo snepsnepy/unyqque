@@ -5,7 +5,7 @@
       <NuxtImg
         src="/img/logo.svg"
         alt="unyqque logo"
-        class="w-[300px] md:w-[600px] md:h-[600px]"
+        class="w-[300px] h-fit md:w-[600px] md:h-[600px]"
       />
     </div>
     <div class="text-center mb-10">

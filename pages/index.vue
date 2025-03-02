@@ -5,12 +5,11 @@
       <img
         src="@/assets/img/logo.svg"
         alt="unyqque logo"
-        width="600px"
-        height="600px"
+        class="w-[400px] h-[400px] md:w-[600px] md:h-[600px]"
       />
     </div>
     <div class="text-center mb-10">
-      <p class="font-montserrat text-4xl text-neutral font-semibold">
+      <p class="font-montserrat text-xl md:text-4xl text-neutral font-semibold">
         AUTOMOTIVE DESIGN <span class="text-primary-hover">&</span> ENGINEERING
       </p>
     </div>

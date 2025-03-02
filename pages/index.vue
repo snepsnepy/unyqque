@@ -7,12 +7,13 @@
       <NuxtImg
         src="/img/logo.svg"
         alt="unyqque logo"
-        class="w-[300px] md:w-[600px] md:h-[600px] md:bg-red-300"
+        class="w-[300px] md:w-[600px] md:h-[600px]"
       />
     </div>
     <div class="text-center pb-10">
-      <p class="font-montserrat text-xl md:text-4xl text-neutral font-semibold">
-        AUTOMOTIVE DESIGN <span class="text-primary-hover">&</span> ENGINEERING
+      <p class="font-montserrat text-lg md:text-4xl text-neutral font-semibold">
+        AUTOMOTIVE DESIGN <span class="text-primary-hover">&</span>
+        ENGINEERING
       </p>
     </div>
   </section>

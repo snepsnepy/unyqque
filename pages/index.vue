@@ -10,7 +10,7 @@
         class="w-[300px] h-fit md:w-[600px] md:h-[600px]"
       />
     </div>
-    <div class="text-center pb-10">
+    <div class="text-center md:pb-10">
       <p class="font-montserrat text-xl md:text-4xl text-neutral font-semibold">
         AUTOMOTIVE DESIGN <span class="text-primary-hover">&</span> ENGINEERING
       </p>

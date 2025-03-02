@@ -11,5 +11,6 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/fonts",
     "@nuxtjs/tailwindcss",
+    "@nuxt/icon",
   ],
 });

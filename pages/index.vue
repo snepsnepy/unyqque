@@ -1,5 +1,7 @@
 <template>
-  <section class="flex flex-col min-h-screen justify-between container mx-auto">
+  <section
+    class="flex flex-col min-h-[100vh] justify-between container mx-auto"
+  >
     <Navigation />
     <div class="flex w-full justify-center">
       <NuxtImg

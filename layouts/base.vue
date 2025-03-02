@@ -12,6 +12,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: screen;
 }
 </style>

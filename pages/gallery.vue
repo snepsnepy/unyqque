@@ -30,11 +30,6 @@
       </div>
     </div>
 
-    <!-- Icon Scroll -->
-    <div class="w-full text-center h-fit pb-2 animate-bounce">
-      <Icon name="fa:sort-down" class="text-neutral w-10 h-10" />
-    </div>
-
     <!-- Image Preview Modal -->
     <div
       v-if="selectedImage"

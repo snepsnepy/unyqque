@@ -3,7 +3,7 @@
     <button
       @click="moveTo('/gallery')"
       :class="getActiveClass('/gallery')"
-      class="font-neue text-neutral text-4xl md:text-7xl -tracking-[1px] hover:text-primary-hover hover:font-bold"
+      class="font-neue text-neutral text-4xl md:text-7xl -tracking-[1px] hover:text-primary-hover"
     >
       <SparklesText
         v-if="getActivePath('/gallery')"
@@ -17,7 +17,7 @@
     <button
       @click="moveTo('/shop')"
       :class="getActiveClass('/shop')"
-      class="font-neue text-neutral text-4xl md:text-7xl -tracking-[1px] hover:text-primary-hover hover:font-bold"
+      class="font-neue text-neutral text-4xl md:text-7xl -tracking-[1px] hover:text-primary-hover"
     >
       <SparklesText
         v-if="getActivePath('/shop')"
@@ -31,7 +31,7 @@
     <button
       @click="moveTo('/contact')"
       :class="getActiveClass('/contact')"
-      class="font-neue text-neutral text-4xl md:text-7xl -tracking-[1px] hover:text-primary-hover hover:font-bold"
+      class="font-neue text-neutral text-4xl md:text-7xl -tracking-[1px] hover:text-primary-hover"
     >
       <SparklesText
         v-if="getActivePath('/contact')"

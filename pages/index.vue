@@ -1,6 +1,6 @@
 <template>
   <section
-    class="flex flex-col min-h-[100vh] justify-between container mx-auto"
+    class="flex flex-col flex-grow min-h-screen justify-between container mx-auto"
   >
     <Navigation />
     <div class="flex w-full justify-center">

@@ -1,3 +1,6 @@
+import animate from "tailwindcss-animate";
+import { setupInspiraUI } from "@inspira-ui/plugins";
+
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -6,6 +9,7 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
+  plugins: [animate, setupInspiraUI],
   theme: {
     screens: {
       sm: "768px",

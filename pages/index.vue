@@ -3,7 +3,7 @@
     <Navigation />
     <div class="flex w-full justify-center">
       <NuxtImg
-        src="@/assets/img/logo.svg"
+        src="/img/logo.svg"
         alt="unyqque logo"
         class="w-[400px] md:w-[600px] md:h-[600px]"
       />

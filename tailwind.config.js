@@ -7,6 +7,16 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
+    screens: {
+      sm: "768px",
+      // => @media (min-width: 576px) { ... }
+
+      md: "1024px",
+      // => @media (min-width: 960px) { ... }
+
+      lg: "1440px",
+      // => @media (min-width: 1440px) { ... }
+    },
     container: {
       padding: {
         DEFAULT: "2rem",
@@ -19,7 +29,14 @@ module.exports = {
       neue: ["Neue"],
       montserrat: ["Montserrat"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#83E5DE",
+        "primary-hover": "#49ada7",
+        "primary-content": "#FFFFFF",
+        neutral: "#444444",
+      },
+    },
   },
   plugins: [],
 };

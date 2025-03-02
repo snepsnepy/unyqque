@@ -1,0 +1,17 @@
+<template>
+  <div class="layout">
+    <slot />
+  </div>
+</template>
+
+<script lang="ts" setup></script>
+
+<style scoped>
+.layout {
+  background-image: url("@/assets/img/munte.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+</style>

@@ -16,7 +16,6 @@
       <div
         v-for="(item, index) in galleryItems"
         :key="index"
-        ref="lastGalleryItem"
         class="flex flex-col bg-neutral border border-neutral rounded-3xl p-3 h-fit"
       >
         <div class="bg-white rounded-3xl">

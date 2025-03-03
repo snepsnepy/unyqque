@@ -9,3 +9,9 @@ export type GalleryItem = {
   title: string;
   imgSrc: string;
 };
+
+export type ShopItem = {
+  name: string;
+  price: number;
+  imgSrc: string;
+};

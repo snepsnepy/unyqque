@@ -9,7 +9,7 @@ module.exports = {
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
   ],
-  plugins: [animate, setupInspiraUI],
+  plugins: [animate, setupInspiraUI, require("daisyui")],
   theme: {
     screens: {
       sm: "768px",
@@ -42,5 +42,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };

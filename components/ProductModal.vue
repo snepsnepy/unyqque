@@ -24,10 +24,26 @@
           >
             {{ store.selectedItem?.name }}
           </h4>
-          <p class="text-black font-bold text-lg md:text-xl">
+          <p class="text-white font-bold text-xl md:text-2xl">
             {{ store.selectedItem?.price }}
-            <span class="text-primary">RON</span>
+            <span class="text-black text-sm">RON</span>
           </p>
+        </div>
+
+        <div class="flex flex-row gap-x-4" v-if="store.selectedItem">
+          <Dropdown
+            :items="sizes"
+            :placeholder="'Select a size'"
+            :is-color-picker="false"
+            v-model:product-size="store.selectedItem!.size"
+          />
+
+          <Dropdown
+            :items="colors"
+            :placeholder="'Select a color'"
+            :is-color-picker="true"
+            v-model:product-color="store.selectedItem!.color"
+          />
         </div>
 
         <!-- Descriere -->
@@ -45,14 +61,16 @@
         <div class="flex gap-x-4 w-full">
           <div class="w-full">
             <button
-              class="btn border-none shadow-none w-full py-4 px-2 bg-white/50 hover:bg-neutral/50 text-black hover:text-white font-montserrat rounded-xl"
+              :disabled="!hasSelectedValues"
+              class="btn border-none shadow-none w-full py-4 px-2 bg-white/50 hover:bg-neutral/50 text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
             >
               Add to Cart
             </button>
           </div>
           <div class="w-fit">
             <button
-              class="btn border-none whitespace-nowrap shadow-none w-full p-4 bg-primary hover:bg-primary-hover text-black hover:text-white font-montserrat rounded-xl"
+              :disabled="!hasSelectedValues"
+              class="btn border-none whitespace-nowrap shadow-none w-full p-4 bg-primary hover:bg-primary-hover text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
             >
               Buy Now
             </button>
@@ -68,6 +86,17 @@
 
 <script lang="ts" setup>
 const store = useShopStore();
+
+const sizes = ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL"];
+const colors = ["Black", "White"];
+
+const hasSelectedValues = computed(
+  () => store.selectedItem?.size && store.selectedItem?.color
+);
 </script>
 
-<style></style>
+<style scoped>
+.modal {
+  @apply bg-black/70;
+}
+</style>

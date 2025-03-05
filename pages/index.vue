@@ -1,20 +1,20 @@
 <template>
   <section
-    class="flex flex-col flex-grow h-dvh justify-between container mx-auto"
+    class="flex flex-col items-center justify-between gap-y-8 py-2 md:py-6 h-full"
   >
-    <Navigation />
-    <div class="flex w-full justify-center">
+    <div class="flex justify-center w-full h-fit">
       <NuxtImg
         src="/img/logo.svg"
-        alt="unyqque logo"
-        class="w-[300px] md:w-[600px] md:h-[600px]"
+        alt="unyqque"
+        class="w-[400px] md:w-[600px]"
       />
     </div>
-    <div class="text-center pb-10">
-      <p class="font-montserrat text-lg md:text-4xl text-neutral font-semibold">
-        AUTOMOTIVE DESIGN <span class="text-primary-hover">&</span>
-        ENGINEERING
-      </p>
+    <div
+      class="flex flex-col items-center md:flex-row gap-x-2 font-montserrat text-lg leading-5 md:text-4xl text-neutral font-semibold"
+    >
+      <span class="whitespace-nowrap">AUTOMOTIVE DESIGN</span>
+      <span class="text-primary-hover">&</span>
+      <span> ENGINEERING</span>
     </div>
   </section>
 </template>

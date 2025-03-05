@@ -1,13 +1,5 @@
 <template>
   <section class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto">
-    <!-- Navigation -->
-    <Navigation />
-
-    <!-- Logo Section -->
-    <div class="flex justify-center w-full h-fit">
-      <NuxtImg src="/img/logo.svg" alt="unyqque logo" class="w-24 md:w-44" />
-    </div>
-
     <div class="flex flex-col items-center justify-center gap-4 w-full h-full">
       <div
         class="flex flex-col md:flex-row justify-between items-center text-center gap-2 w-2/3"

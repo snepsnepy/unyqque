@@ -1,10 +1,22 @@
 <template>
   <div class="layout bg-white">
-    <slot />
+    <section class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto">
+      <Navigation />
+
+      <!-- Logo Section -->
+      <div v-if="!isIndexPage" class="flex justify-center w-full h-fit">
+        <NuxtImg src="/img/logo.svg" alt="unyqque logo" class="w-24 md:w-44" />
+      </div>
+      <slot />
+    </section>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const route = useRoute();
+
+const isIndexPage = computed(() => route.name === "index");
+</script>
 
 <style scoped>
 .layout {

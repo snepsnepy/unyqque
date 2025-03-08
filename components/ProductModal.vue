@@ -30,7 +30,10 @@
           </p>
         </div>
 
-        <div class="flex flex-row gap-x-4" v-if="store.selectedItem">
+        <div
+          class="flex flex-col md:flex-row gap-x-4 gap-y-4"
+          v-if="store.selectedItem"
+        >
           <Dropdown
             :items="sizes"
             :placeholder="'Select a size'"
@@ -51,7 +54,7 @@
           <p class="font-montserrat font-medium text-black text-base leading-4">
             Description
           </p>
-          <p class="text-neutral">
+          <p class="text-neutral text-sm leading-4">
             Oversized tshirt 100% cotton oversized fit. We recomment ordering
             the same size as usual or a biffer one for the perfect fit.
           </p>
@@ -62,7 +65,7 @@
           <div class="w-full">
             <button
               :disabled="!hasSelectedValues"
-              class="btn border-none shadow-none w-full py-4 px-2 bg-white/50 hover:bg-neutral/50 text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
+              class="btn border-none shadow-none w-full py-3.5 px-2 bg-white/50 hover:bg-neutral/50 text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
             >
               Add to Cart
             </button>
@@ -70,7 +73,7 @@
           <div class="w-fit">
             <button
               :disabled="!hasSelectedValues"
-              class="btn border-none whitespace-nowrap shadow-none w-full p-4 bg-primary hover:bg-primary-hover text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
+              class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-primary-hover text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
             >
               Buy Now
             </button>

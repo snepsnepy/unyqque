@@ -4,9 +4,9 @@
       <Navigation />
 
       <!-- Logo Section -->
-      <div v-if="!isIndexPage" class="flex justify-center w-full h-fit">
+      <!-- <div v-if="!isIndexPage" class="flex justify-center w-full h-fit">
         <NuxtImg src="/img/logo.svg" alt="unyqque logo" class="w-24 md:w-44" />
-      </div>
+      </div> -->
       <slot />
     </section>
   </div>

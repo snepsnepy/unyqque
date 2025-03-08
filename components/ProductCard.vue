@@ -23,7 +23,7 @@
 
         <button
           class="btn bg-primary hover:bg-primary-hover border-none shadow-sm text-neutral text-sm md:text-base hover:text-white font-montserrat rounded-xl"
-          onclick="my_modal_3.showModal()"
+          @click="emit('shopIconClicked')"
         >
           <Icon
             name="material-symbols:shopping-cart-checkout-rounded"
@@ -37,6 +37,8 @@
 
 <script setup lang="ts">
 import { type ShopItem } from "@/types/index";
+
+const emit = defineEmits(["shopIconClicked"]);
 
 const props = defineProps<{
   product: ShopItem;

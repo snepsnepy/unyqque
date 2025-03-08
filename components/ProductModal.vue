@@ -1,15 +1,16 @@
 <template>
-  <dialog id="my_modal_3" class="modal">
+  <dialog class="modal modal-open">
     <div
       class="modal-box bg-white/50 p-4 md:p-6 rounded-3xl bg-clip-padding backdrop-filter backdrop-blur-md"
     >
-      <form method="dialog">
+      <div method="dialog">
         <button
+          @click="emit('closeIconClicked')"
           class="btn btn-sm btn-circle btn-ghost text-neutral hover:text-white hover:bg-neutral/10 hover:border-none absolute right-4 top-4"
         >
           ✕
         </button>
-      </form>
+      </div>
 
       <div class="flex flex-col gap-y-4 md:gap-y-4 pt-8">
         <!-- Product Image -->
@@ -64,6 +65,7 @@
         <div class="flex gap-x-4 w-full">
           <div class="w-full">
             <button
+              @click="addItemAndClose()"
               :disabled="!hasSelectedValues"
               class="btn border-none shadow-none w-full py-3.5 px-2 bg-white/50 hover:bg-neutral/50 text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
             >
@@ -81,25 +83,25 @@
         </div>
       </div>
     </div>
-    <form method="dialog" class="modal-backdrop">
+    <form method="dialog" class="modal-backdrop bg-black/70">
       <button>close</button>
     </form>
   </dialog>
 </template>
 
 <script lang="ts" setup>
+const emit = defineEmits(["closeIconClicked"]);
 const store = useShopStore();
 
 const sizes = ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL"];
 const colors = ["Black", "White"];
 
+const addItemAndClose = () => {
+  store.addToCart(store.selectedItem!);
+  emit("closeIconClicked");
+};
+
 const hasSelectedValues = computed(
   () => store.selectedItem?.size && store.selectedItem?.color
 );
 </script>
-
-<style scoped>
-.modal {
-  @apply bg-black/70;
-}
-</style>

@@ -10,7 +10,7 @@ export const useShopStore = defineStore("shopStore", () => {
   };
 
   const addToCart = (item: ShopItem) => {
-    shoppingCart.value.push(item);
+    shoppingCart.value.push({ ...item });
   };
 
   return {

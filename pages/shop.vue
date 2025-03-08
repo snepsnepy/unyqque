@@ -1,5 +1,17 @@
 <template>
   <!-- Shop container -->
+  <div class="relative py-2 text-right">
+    <div class="-top-1.5 absolute right-0">
+      <p
+        v-if="store.shoppingCart.length"
+        class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white"
+      >
+        {{ store.shoppingCart.length }}
+      </p>
+    </div>
+    <Icon name="solar:cart-outline" class="w-8 h-8 mr-3 text-neutral" />
+  </div>
+
   <section
     class="grid grid-cols-1 md:grid-cols-2 no-scrollbar lg:grid-cols-3 gap-4 h-fit pb-4 overflow-scroll"
   >
@@ -7,11 +19,11 @@
       v-for="(item, index) in shopItems"
       :key="index"
       :product="item"
-      @click="openModal(item)"
+      @shop-icon-clicked="openModal(item)"
     />
 
     <!-- Modal -->
-    <ProductModal />
+    <ProductModal @close-icon-clicked="closeModal" v-if="modalOpen" />
   </section>
 </template>
 
@@ -24,17 +36,18 @@ definePageMeta({
   layout: "base",
 });
 
+const modalOpen = ref(false);
+
 const store = useShopStore();
-const modalOpened = ref(false);
 
 const openModal = (item: ShopItem) => {
+  modalOpen.value = true;
   store.selectItem(item);
-  modalOpened.value = true;
 };
 
 const closeModal = () => {
+  modalOpen.value = false;
   store.selectedItem = null;
-  modalOpened.value = false;
 };
 
 const shopItems: Array<ShopItem> = [

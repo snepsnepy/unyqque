@@ -156,7 +156,6 @@ const removeItemByIndex = (index: number) => {
 watch(
   () => store.shoppingCart,
   () => {
-    console.log("STORE: ", store.shoppingCart.length);
     if (store.shoppingCart.length === 0) emit("closeIconClicked");
   },
   { deep: true }

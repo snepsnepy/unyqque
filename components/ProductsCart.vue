@@ -1,6 +1,6 @@
 <template>
   <div class="relative py-2 text-right">
-    <div class="-top-1.5 absolute right-0">
+    <div class="-top-1 absolute right-0.5">
       <p
         v-if="shoppingCart.length"
         class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white"

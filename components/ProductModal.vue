@@ -6,7 +6,7 @@
       <div method="dialog">
         <button
           @click="emit('closeIconClicked')"
-          class="btn btn-sm btn-circle btn-ghost text-neutral hover:text-white hover:bg-neutral/10 hover:border-none absolute right-4 top-4"
+          class="btn btn-sm btn-circle btn-ghost shadow-none border-neutral/50 hover:border-neutral text-neutral hover:text-white hover:bg-neutral/10 absolute right-4 top-4"
         >
           ✕
         </button>
@@ -83,7 +83,7 @@
         </div>
       </div>
     </div>
-    <form method="dialog" class="modal-backdrop bg-black/70">
+    <form method="dialog" class="modal-backdrop bg-neutral/50">
       <button>close</button>
     </form>
   </dialog>

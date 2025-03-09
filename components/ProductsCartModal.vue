@@ -152,4 +152,13 @@ const removeItemByIndex = (index: number) => {
   store.removeItemByIndex(index);
   confirmingIndex.value = null; // Reset confirmation state
 };
+
+watch(
+  () => store.shoppingCart,
+  () => {
+    console.log("STORE: ", store.shoppingCart.length);
+    if (store.shoppingCart.length === 0) emit("closeIconClicked");
+  },
+  { deep: true }
+);
 </script>

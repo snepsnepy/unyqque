@@ -3,7 +3,7 @@
   <ProductsCart
     :shopping-cart="store.shoppingCart"
     class="hover:cursor-pointer"
-    @click="openCartModal()"
+    @click="store.shoppingCart.length ? openCartModal() : ''"
   />
 
   <!-- Shop container -->

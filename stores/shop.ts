@@ -13,9 +13,14 @@ export const useShopStore = defineStore("shopStore", () => {
     shoppingCart.value.push({ ...item });
   };
 
+  const removeItemByIndex = (index: number) => {
+    shoppingCart.value.splice(index, 1);
+  };
+
   return {
     selectedItem,
     selectItem,
+    removeItemByIndex,
     shoppingCart,
     addToCart,
   };

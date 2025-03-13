@@ -1,9 +1,16 @@
 import { defineStore } from "pinia";
-import type { ShopItem } from "~/types";
+import type { PersonalInfo, ShopItem } from "~/types";
 
 export const useShopStore = defineStore("shopStore", () => {
   const selectedItem = ref<ShopItem | null>(null);
   const shoppingCart = ref<Array<ShopItem>>([]);
+  const totalPrice = ref<number>();
+  const personalInfo = ref<PersonalInfo>({
+    fullName: "",
+    address: "",
+    cellPhoneNo: "",
+    email: "",
+  });
 
   const selectItem = (item: ShopItem) => {
     selectedItem.value = item;
@@ -22,6 +29,8 @@ export const useShopStore = defineStore("shopStore", () => {
     selectItem,
     removeItemByIndex,
     shoppingCart,
+    totalPrice,
+    personalInfo,
     addToCart,
   };
 });

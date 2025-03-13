@@ -17,3 +17,10 @@ export type ShopItem = {
   size?: string;
   color?: string;
 };
+
+export type PersonalInfo = {
+  fullName: string;
+  address: string;
+  cellPhoneNo: string;
+  email: string;
+};

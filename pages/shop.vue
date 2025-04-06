@@ -11,7 +11,7 @@
     class="grid grid-cols-1 md:grid-cols-2 no-scrollbar lg:grid-cols-3 gap-4 h-fit pb-4 overflow-scroll"
   >
     <ProductCard
-      v-for="(item, index) in shopItems"
+      v-for="(item, index) in data"
       :key="index"
       :product="item"
       @shop-icon-clicked="openProductModal(item)"
@@ -33,13 +33,14 @@
 </template>
 
 <script setup lang="ts">
-import bbs from "@/assets/img/bbs2.png";
-import gold from "@/assets/img/gold.png";
 import { type ShopItem } from "@/types/index";
 
 definePageMeta({
   layout: "base",
 });
+
+const { $supabase } = useNuxtApp();
+const { data } = await $supabase.from("products").select("*");
 
 const productModalOpen = ref(false);
 const cartModalOpen = ref(false);
@@ -68,22 +69,18 @@ const shopItems: Array<ShopItem> = [
   {
     name: "ANTI TDI",
     price: 175,
-    imgSrc: bbs,
   },
   {
     name: "BBS RS",
     price: 160,
-    imgSrc: bbs,
   },
   {
     name: "CIGARETTES",
     price: 175,
-    imgSrc: bbs,
   },
   {
     name: "ANTI TDI",
     price: 175,
-    imgSrc: bbs,
   },
 ];
 </script>

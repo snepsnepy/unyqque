@@ -5,7 +5,7 @@
     >
       <div method="dialog">
         <button
-          @click="emit('closeIconClicked')"
+          @click="closeModal()"
           class="btn btn-sm btn-circle btn-ghost shadow-none border-neutral/50 hover:border-neutral text-neutral hover:text-white hover:bg-neutral/10 absolute right-4 top-4"
         >
           ✕
@@ -15,7 +15,7 @@
       <div class="flex flex-col gap-y-4 md:gap-y-4 pt-8">
         <!-- Product Image -->
         <div class="rounded-3xl">
-          <img :src="store.selectedItem?.imgSrc" alt="product" />
+          <img :src="imageUrl" alt="product" />
         </div>
 
         <!-- Title, Price -->
@@ -47,6 +47,13 @@
             :placeholder="'Select a color'"
             :is-color-picker="true"
             v-model:product-color="store.selectedItem!.color"
+          />
+
+          <Dropdown
+            :items="designColor"
+            :placeholder="'Select a design color'"
+            :is-color-picker="false"
+            v-model:product-color="store.selectedItem!.designColor"
           />
         </div>
 
@@ -95,13 +102,38 @@ const store = useShopStore();
 
 const sizes = ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL"];
 const colors = ["Black", "White"];
+const designColor = ["Green", "Pink", "Blue"];
 
 const addItemAndClose = () => {
   store.addToCart(store.selectedItem!);
   emit("closeIconClicked");
 };
 
+const closeModal = () => {
+  emit("closeIconClicked");
+};
+
 const hasSelectedValues = computed(
   () => store.selectedItem?.size && store.selectedItem?.color
 );
+
+const { $supabase } = useNuxtApp();
+
+const imageUrl = computed(() => {
+  let fileName = "";
+
+  if (store.selectedItem?.designColor) {
+    fileName = `${
+      store.selectedItem?.name
+    }_${store.selectedItem?.color?.toLowerCase()}_${store.selectedItem?.designColor?.toLowerCase()}.png`;
+  } else {
+    fileName = `${store.selectedItem?.name}_default.png`;
+  }
+
+  const { data } = $supabase.storage.from("tshirts").getPublicUrl(fileName);
+
+  store.selectedItem!.imgSrc = data.publicUrl;
+
+  return data.publicUrl;
+});
 </script>

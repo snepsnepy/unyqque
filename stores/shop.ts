@@ -13,7 +13,7 @@ export const useShopStore = defineStore("shopStore", () => {
   });
 
   const selectItem = (item: ShopItem) => {
-    selectedItem.value = item;
+    selectedItem.value = { ...item };
   };
 
   const addToCart = (item: ShopItem) => {

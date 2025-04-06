@@ -7,15 +7,16 @@ export const enum CATEGORY {
 export type GalleryItem = {
   category: string;
   title: string;
-  imgSrc: string;
+  imgSrc?: string;
 };
 
 export type ShopItem = {
   name: string;
   price: number;
-  imgSrc: string;
+  imgSrc?: string;
   size?: string;
   color?: string;
+  designColor?: string;
 };
 
 export type PersonalInfo = {

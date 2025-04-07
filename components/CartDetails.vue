@@ -12,16 +12,21 @@
           <p class="text-neutral font-montserrat font-bold text-sm md:text-xl">
             {{ item.name }}
           </p>
-          <div class="flex flex-col md:flex-row gap-y-1 md:gap-x-1">
+          <div class="flex flex-col gap-y-1 md:gap-x-1">
             <p
-              class="text-neutral/50 font-montserrat font-medium text-xs md:text-sm"
+              class="text-neutral/50 font-montserrat font-medium text-xs leading-3 md:text-sm md:leading-[14px]"
             >
-              Size: {{ item.size }},
+              <b>Size</b>: {{ item.size }}
             </p>
             <p
-              class="text-neutral/50 font-montserrat font-medium text-xs md:text-sm"
+              class="text-neutral/50 font-montserrat font-medium text-xs leading-3 md:text-sm md:leading-[14px]"
             >
-              Color: {{ item.color }}
+              <b>Color</b>: {{ item.color }}
+            </p>
+            <p
+              class="text-neutral/50 font-montserrat font-medium text-xs leading-3 md:text-sm md:leading-[14px]"
+            >
+              <b>Design Color</b>: {{ item.designColor }}
             </p>
           </div>
         </div>

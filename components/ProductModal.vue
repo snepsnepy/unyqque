@@ -5,7 +5,7 @@
     >
       <div method="dialog">
         <button
-          @click="closeModal()"
+          @click="emit('closeIconClicked')"
           class="btn btn-sm btn-circle btn-ghost shadow-none border-neutral/50 hover:border-neutral text-neutral hover:text-white hover:bg-neutral/10 absolute right-4 top-4"
         >
           ✕
@@ -31,28 +31,27 @@
           </p>
         </div>
 
-        <div
-          class="flex flex-col md:flex-row gap-x-4 gap-y-4"
-          v-if="store.selectedItem"
-        >
-          <Dropdown
-            :items="sizes"
-            :placeholder="'Select a size'"
-            :is-color-picker="false"
-            v-model:product-size="store.selectedItem!.size"
-          />
+        <div class="flex flex-col gap-4" v-if="store.selectedItem">
+          <div class="flex flex-col md:flex-row gap-x-4">
+            <Dropdown
+              :items="sizes"
+              :placeholder="'Select a size'"
+              :is-color-picker="false"
+              v-model:product-size="store.selectedItem!.size"
+            />
 
-          <Dropdown
-            :items="colors"
-            :placeholder="'Select a color'"
-            :is-color-picker="true"
-            v-model:product-color="store.selectedItem!.color"
-          />
+            <Dropdown
+              :items="colors"
+              :placeholder="'Select a color'"
+              :is-color-picker="true"
+              v-model:product-color="store.selectedItem!.color"
+            />
+          </div>
 
           <Dropdown
             :items="designColor"
             :placeholder="'Select a design color'"
-            :is-color-picker="false"
+            :is-design-color-picker="true"
             v-model:product-color="store.selectedItem!.designColor"
           />
         </div>
@@ -106,10 +105,6 @@ const designColor = ["Green", "Pink", "Blue"];
 
 const addItemAndClose = () => {
   store.addToCart(store.selectedItem!);
-  emit("closeIconClicked");
-};
-
-const closeModal = () => {
   emit("closeIconClicked");
 };
 

@@ -32,7 +32,7 @@
       ref="dropdownRef"
       class="absolute w-full bottom-full bg-gray-200 rounded-b-lg shadow-lg z-10"
       :class="{
-        'rounded-lg': isColorPicker,
+        'rounded-lg': isColorPicker || isDesignColorPicker,
       }"
     >
       <ul
@@ -53,7 +53,7 @@
 
       <transition name="fade">
         <div
-          v-if="isOpen && !isColorPicker"
+          v-if="isOpen && !isColorPicker && !isDesignColorPicker"
           class="absolute bottom-full w-full left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded-t-lg shadow-lg"
         >
           More sizes available
@@ -72,6 +72,7 @@ defineProps<{
   items: string[];
   placeholder?: string;
   isColorPicker?: boolean;
+  isDesignColorPicker?: boolean;
 }>();
 
 const productSize = defineModel<string>("productSize");

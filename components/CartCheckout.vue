@@ -65,7 +65,9 @@ const generateWhatsAppLink = () => {
       (item: ShopItem, index: number) =>
         `*Item ${index + 1}:* \n  *Title:* ${item.name}\n  *Color:* ${
           item.color
-        }\n  *Size:* ${item.size}\n  *Price:* ${item.price}\n`
+        }\n  *Design Color:* ${item.designColor}\n  *Size:* ${
+          item.size
+        }\n  *Price:* ${item.price}\n`
     )
     .join("\n");
 

@@ -30,7 +30,10 @@
       />
 
       <!-- Checkout -->
-      <CartCheckout v-if="checkoutView" />
+      <CartCheckout
+        v-if="checkoutView"
+        @placed-order="emit('closeIconClicked')"
+      />
     </div>
 
     <form method="dialog" class="modal-backdrop bg-neutral/50">

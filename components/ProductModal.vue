@@ -49,9 +49,10 @@
           </div>
 
           <Dropdown
-            :items="designColor"
+            :items="designColor!"
             :placeholder="'Select a design color'"
             :is-design-color-picker="true"
+            :disabled="!store.selectedItem!.color"
             v-model:product-color="store.selectedItem!.designColor"
           />
         </div>
@@ -99,9 +100,11 @@
 const emit = defineEmits(["closeIconClicked"]);
 const store = useShopStore();
 
+const { $supabase } = useNuxtApp();
+
 const sizes = ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL"];
 const colors = ["Black", "White"];
-const designColor = ["Green", "Pink", "Blue"];
+const designColor = store.selectedItem?.designcolors;
 
 const addItemAndClose = () => {
   store.addToCart(store.selectedItem!);
@@ -111,8 +114,6 @@ const addItemAndClose = () => {
 const hasSelectedValues = computed(
   () => store.selectedItem?.size && store.selectedItem?.color
 );
-
-const { $supabase } = useNuxtApp();
 
 const imageUrl = computed(() => {
   let fileName = "";

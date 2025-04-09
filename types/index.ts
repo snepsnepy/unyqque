@@ -17,6 +17,7 @@ export type ShopItem = {
   size?: string;
   color?: string;
   designColor?: string;
+  designcolors?: Array<string>;
 };
 
 export type PersonalInfo = {

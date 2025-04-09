@@ -45,6 +45,8 @@
 <script setup lang="ts">
 import type { ShopItem } from "@/types";
 
+const emit = defineEmits(["placedOrder"]);
+
 const store = useShopStore();
 
 const formFilled = computed(() => {
@@ -75,12 +77,12 @@ const generateWhatsAppLink = () => {
     store.shoppingCart.reduce((sum, item) => sum + item.price, 0) + 20;
 
   // Customer details
-  const customerDetails = `*Customer Details:*  
+  const customerDetails = `*Customer Details:*
 
-  *Name:* ${store.personalInfo.fullName}  
-  *Address:* ${store.personalInfo.address}  
-  *Phone:* ${store.personalInfo.cellPhoneNo}  
-  *Phone:* ${store.personalInfo.email}  
+  *Name:* ${store.personalInfo.fullName}
+  *Address:* ${store.personalInfo.address}
+  *Phone:* ${store.personalInfo.cellPhoneNo}
+  *Phone:* ${store.personalInfo.email}
 `;
 
   // Full message
@@ -96,5 +98,7 @@ const generateWhatsAppLink = () => {
 const sendOrderViaWhatsApp = () => {
   const whatsappLink = generateWhatsAppLink();
   window.open(whatsappLink, "_blank");
+  emit("placedOrder");
+  // TODO: empty cart after order complete (+ form data)
 };
 </script>

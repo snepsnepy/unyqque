@@ -32,7 +32,7 @@
         </div>
 
         <div class="flex flex-col gap-4" v-if="store.selectedItem">
-          <div class="flex flex-col md:flex-row gap-x-4">
+          <div class="flex flex-col md:flex-row gap-x-4 gap-y-4">
             <Dropdown
               :items="sizes"
               :placeholder="'Select a size'"
@@ -69,7 +69,7 @@
         </div>
 
         <!-- Buttons -->
-        <div class="flex gap-x-4 w-full">
+        <div class="flex flex-col md:flex-row gap-x-4 gap-y-2 w-full">
           <div class="w-full">
             <button
               @click="addItemAndClose()"
@@ -79,8 +79,9 @@
               Add to Cart
             </button>
           </div>
-          <div class="w-fit">
+          <div class="w-full md:w-fit">
             <button
+              @click="emit('buyNowClicked')"
               :disabled="!hasSelectedValues"
               class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-primary-hover text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
             >
@@ -97,7 +98,7 @@
 </template>
 
 <script lang="ts" setup>
-const emit = defineEmits(["closeIconClicked"]);
+const emit = defineEmits(["closeIconClicked", "buyNowClicked"]);
 const store = useShopStore();
 
 const { $supabase } = useNuxtApp();

@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ShopItem } from "@/types";
+const emit = defineEmits(["placedOrder"]);
 
 const store = useShopStore();
 const { shoppingCart } = storeToRefs(store);

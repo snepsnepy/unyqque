@@ -49,9 +49,10 @@
           </div>
 
           <Dropdown
-            :items="designColors!"
+            :items="designColor!"
             :placeholder="'Select a design color'"
             :is-design-color-picker="true"
+            :disabled="!store.selectedItem!.color"
             v-model:product-color="store.selectedItem!.designColor"
           />
         </div>
@@ -99,12 +100,12 @@
 <script lang="ts" setup>
 const emit = defineEmits(["closeIconClicked", "buyNowClicked"]);
 const store = useShopStore();
-const { selectedItem } = storeToRefs(store);
+
 const { $supabase } = useNuxtApp();
 
 const sizes = ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL"];
 const colors = ["Black", "White"];
-const designColors = ref<string[]>(selectedItem.value?.designcolors!);
+const designColor = store.selectedItem?.designcolors;
 
 const addItemAndClose = () => {
   store.addToCart(store.selectedItem!);

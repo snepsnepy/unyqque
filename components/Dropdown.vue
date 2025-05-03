@@ -3,7 +3,8 @@
     <!-- Dropdown Button -->
     <button
       @click="toggleDropdown"
-      class="w-full flex justify-between items-center font-montserrat font-medium border-none px-2 py-2.5 border rounded-xl bg-white/50 text-black hover:bg-white/30 focus:outline-none"
+      :disabled="disabled"
+      class="w-full flex justify-between items-center font-montserrat font-medium border-none px-2 py-2.5 border rounded-xl bg-white/50 text-black hover:bg-white/30 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
     >
       <div class="flex gap-x-2 items-center">
         <div
@@ -73,6 +74,7 @@ defineProps<{
   placeholder?: string;
   isColorPicker?: boolean;
   isDesignColorPicker?: boolean;
+  disabled?: boolean;
 }>();
 
 const productSize = defineModel<string>("productSize");

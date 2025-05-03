@@ -1,6 +1,6 @@
 <template>
   <!-- Products Cart -->
-  <ProductsCart
+  <ProductsCartIcon
     :shopping-cart="store.shoppingCart"
     class="hover:cursor-pointer"
     @click="store.shoppingCart.length ? openCartModal() : ''"
@@ -21,6 +21,7 @@
     <ProductModal
       @close-icon-clicked="closeProductModal"
       v-if="productModalOpen"
+      @buy-now-clicked="buyNowProduct()"
     />
 
     <!-- Products Cart Modal -->
@@ -61,26 +62,13 @@ const openCartModal = () => {
   cartModalOpen.value = true;
 };
 
+const buyNowProduct = () => {
+  productModalOpen.value = false;
+  store.addToCart(store.selectedItem!);
+  openCartModal();
+};
+
 const closeCartModal = () => {
   cartModalOpen.value = false;
 };
-
-const shopItems: Array<ShopItem> = [
-  {
-    name: "ANTI TDI",
-    price: 175,
-  },
-  {
-    name: "BBS RS",
-    price: 160,
-  },
-  {
-    name: "CIGARETTES",
-    price: 175,
-  },
-  {
-    name: "ANTI TDI",
-    price: 175,
-  },
-];
 </script>

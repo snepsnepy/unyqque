@@ -80,6 +80,7 @@
           </div>
           <div class="w-full md:w-fit">
             <button
+              @click="emit('buyNowClicked')"
               :disabled="!hasSelectedValues"
               class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-primary-hover text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
             >
@@ -96,7 +97,7 @@
 </template>
 
 <script lang="ts" setup>
-const emit = defineEmits(["closeIconClicked"]);
+const emit = defineEmits(["closeIconClicked", "buyNowClicked"]);
 const store = useShopStore();
 const { selectedItem } = storeToRefs(store);
 const { $supabase } = useNuxtApp();

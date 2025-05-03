@@ -26,7 +26,7 @@
     </button>
 
     <!-- Info Text -->
-    <section class="flex flex-row gap-x-1 items-center">
+    <section class="flex flex-row gap-x-1 items-start">
       <div>
         <Icon
           name="material-symbols:info-outline-rounded"
@@ -57,45 +57,11 @@ const formFilled = computed(() => {
   );
 });
 
-const generateWhatsAppLink = () => {
-  const phoneNumber = "+40738950590";
-
-  // Format the items
-  const itemsMessage = shoppingCart.value
-    .map(
-      (item: ShopItem, index: number) =>
-        `*Item ${index + 1}:* \n  *Title:* ${item.name}\n  *Color:* ${
-          item.color
-        }\n  *Design Color:* ${item.designColor}\n  *Size:* ${
-          item.size
-        }\n  *Price:* ${item.price}\n`
-    )
-    .join("\n");
-
-  const totalPrice =
-    shoppingCart.value.reduce((sum, item) => sum + item.price, 0) + 20;
-
-  // Customer details
-  const customerDetails = `*Customer Details:*  
-
-  *Name:* ${store.personalInfo.fullName}  
-  *Address:* ${store.personalInfo.address}  
-  *Phone:* ${store.personalInfo.cellPhoneNo}  
-  *Phone:* ${store.personalInfo.email}  
-`;
-
-  // Full message
-  const message = `*New Order Request* \n\n${itemsMessage}\n${customerDetails}\n*Total Price (including fees):* ${totalPrice.toFixed(
-    2
-  )} RON \n\nThank you for your order! Your order will be confirmed shortly. We appreciate your patience and will update you as soon as possible.`;
-
-  // Encode message for URL
-  const encodedMessage = encodeURIComponent(message);
-  return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-};
-
 const sendOrderViaWhatsApp = () => {
-  const whatsappLink = generateWhatsAppLink();
+  const whatsappLink = useGenerateWappLink(
+    store.shoppingCart,
+    store.personalInfo
+  );
   window.open(whatsappLink, "_blank");
   shoppingCart.value = [];
 };

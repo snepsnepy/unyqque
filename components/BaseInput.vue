@@ -16,7 +16,7 @@
     />
     <span
       v-if="modelValue && modelValue.length < 5"
-      class="py-1 text-xs leading-3 text-[#F72C5B]/80"
+      class="py-1 text-xs leading-3 text-[#F72C5B]/80 font-semibold"
       >Input must be at least 5 characters long.</span
     >
   </div>

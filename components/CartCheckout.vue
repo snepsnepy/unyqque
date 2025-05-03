@@ -61,7 +61,7 @@ const generateWhatsAppLink = () => {
   const phoneNumber = "+40738950590";
 
   // Format the items
-  const itemsMessage = store.shoppingCart
+  const itemsMessage = shoppingCart.value
     .map(
       (item: ShopItem, index: number) =>
         `*Item ${index + 1}:* \n  *Title:* ${item.name}\n  *Color:* ${
@@ -73,7 +73,7 @@ const generateWhatsAppLink = () => {
     .join("\n");
 
   const totalPrice =
-    store.shoppingCart.reduce((sum, item) => sum + item.price, 0) + 20;
+    shoppingCart.value.reduce((sum, item) => sum + item.price, 0) + 20;
 
   // Customer details
   const customerDetails = `*Customer Details:*  

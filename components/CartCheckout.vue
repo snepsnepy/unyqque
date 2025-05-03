@@ -46,6 +46,7 @@
 import type { ShopItem } from "@/types";
 
 const store = useShopStore();
+const { shoppingCart } = storeToRefs(store);
 
 const formFilled = computed(() => {
   return (
@@ -96,5 +97,6 @@ const generateWhatsAppLink = () => {
 const sendOrderViaWhatsApp = () => {
   const whatsappLink = generateWhatsAppLink();
   window.open(whatsappLink, "_blank");
+  shoppingCart.value = [];
 };
 </script>

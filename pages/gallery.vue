@@ -1,24 +1,16 @@
 <template>
-  <section class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto">
+  <section>
     <!-- Gallery Items -->
     <div
-      class="grid grid-cols-1 md:grid-cols-2 no-scrollbar lg:grid-cols-3 gap-4 h-fit p-2 md:p-6 overflow-scroll"
+      class="grid grid-cols-1 md:grid-cols-2 no-scrollbar lg:grid-cols-3 gap-4 overflow-scroll items-center"
     >
-      <!-- 1 -->
-      <div
-        v-for="(item, index) in galleryItems"
+      <DirectionAwareHover
+        v-for="(image, index) in images"
         :key="index"
-        class="flex flex-col bg-neutral border border-neutral rounded-3xl p-3 h-fit"
+        :image-url="image.url"
+        @click="openPreview(image.url)"
       >
-        <div class="bg-white rounded-3xl">
-          <img :src="item.imgSrc" alt="bbs" @click="openPreview(item.imgSrc)" />
-        </div>
-        <p
-          class="text-white font-semibold font-montserrat text-sm leading-4 md:text-xl pt-2"
-        >
-          {{ item.category }} - {{ item.title }}
-        </p>
-      </div>
+      </DirectionAwareHover>
     </div>
 
     <!-- Image Preview Modal -->
@@ -28,16 +20,16 @@
       @click="closePreview"
     >
       <div
-        class="relative p-4 bg-white rounded-3xl max-w-4xl w-full"
+        class="relative p-2 lg:p-6 bg-white/50 bg-clip-padding backdrop-filter backdrop-blur-md rounded-3xl max-w-4xl w-full border border-neutral"
         @click.stop
       >
         <button
-          class="absolute top-4 right-4 text-neutral text-3xl font-bold hover:text-primary-hover"
+          class="absolute top-0 right-2 text-white text-3xl font-bold hover:text-primary/50"
           @click="closePreview"
         >
           &times;
         </button>
-        <img :src="selectedImage" alt="Preview" class="w-full rounded-3xl" />
+        <img :src="selectedImage" alt="Preview" class="w-full rounded-2xl" />
       </div>
     </div>
   </section>
@@ -52,7 +44,43 @@ definePageMeta({
   layout: "base",
 });
 
+const { $supabase } = useNuxtApp();
 const selectedImage = ref(null);
+const images = ref<any>([]);
+
+const useGalleryImages = async () => {
+  try {
+    // List all files in the 'designs' folder
+    const { data: files, error } = await $supabase.storage
+      .from("gallery")
+      .list("designs");
+
+    if (error) throw error;
+
+    // Get public URLs for each image
+    const imagesWithUrls = files.map((file) => {
+      const {
+        data: { publicUrl },
+      } = $supabase.storage
+        .from("gallery")
+        .getPublicUrl(`designs/${file.name}`);
+
+      return {
+        name: file.name,
+        url: publicUrl,
+      };
+    });
+
+    return imagesWithUrls;
+  } catch (error) {
+    console.error("Error fetching gallery images:", error);
+    return [];
+  }
+};
+
+onMounted(async () => {
+  images.value = await useGalleryImages();
+});
 
 // Open image preview
 const openPreview = (imgSrc: any) => {

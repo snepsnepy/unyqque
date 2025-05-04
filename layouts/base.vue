@@ -1,6 +1,8 @@
 <template>
   <div class="layout bg-white">
-    <section class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto">
+    <section
+      class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto overflow-scroll"
+    >
       <Navigation />
 
       <!-- Logo Section -->

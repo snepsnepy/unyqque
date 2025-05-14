@@ -5,9 +5,8 @@ export const enum CATEGORY {
 }
 
 export type GalleryItem = {
-  category: string;
-  title: string;
-  imgSrc?: string;
+  name: string;
+  url: string;
 };
 
 export type ShopItem = {

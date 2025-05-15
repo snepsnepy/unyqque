@@ -1,7 +1,7 @@
 <template>
   <div class="layout bg-white">
     <section
-      class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto overflow-scroll"
+      class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto overflow-scroll no-scrollbar"
     >
       <Navigation />
 

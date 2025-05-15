@@ -16,7 +16,7 @@
         <!-- Download Button -->
         <button
           v-if="isWallpaper"
-          class="relative text-white text-xl md:text-3xl font-bold hover:text-primary"
+          class="absolute left-4 top-4 md:left-6 md:top-6 text-white text-xl md:text-3xl font-bold pl-3.5 pr-2 border-2 border-white rounded-full hover:bg-white hover:text-neutral"
           @click.stop="downloadImage"
         >
           <div class="flex items-center flex-row gap-x-2">
@@ -40,7 +40,7 @@
 
         <!-- Close Button -->
         <button
-          class="relative text-white text-2xl md:text-3xl font-bold hover:text-primary"
+          class="absolute right-4 top-4 md:right-6 md:top-6 text-white text-2xl md:text-3xl font-bold border-2 border-white rounded-full hover:bg-white hover:text-neutral"
           @click="closePreview"
         >
           <svg
@@ -72,7 +72,7 @@
 const selectedImage = defineModel<string | null>("selectedImage");
 
 defineProps<{
-  isWallpaper: boolean;
+  isWallpaper?: boolean;
 }>();
 // Close the preview
 const closePreview = () => {

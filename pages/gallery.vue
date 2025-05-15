@@ -1,15 +1,11 @@
+<!-- pages/gallery.vue -->
 <template>
-  <section>
-    <!-- Fresh Creations -->
-    <FreshCreations :images="images" @open-modal="(img) => openPreview(img)" />
+  <section class="py-4 md:py-8">
+    <div class="flex flex-col gap-y-14">
+      <FreshCreations @open-modal="(img) => openImagePreview(img)" />
+      <Wallpapers @open-modal="(img) => openWallpaperPreview(img)" />
+    </div>
 
-    <!-- Wallpapers -->
-    <Wallpapers
-      :wallpapers="wallpapers"
-      @open-modal="(img) => openPreview(img)"
-    />
-
-    <!-- Image Preview Modal -->
     <ImagePreviewModal
       v-model:selected-image="selectedImage"
       v-if="selectedImage"
@@ -24,22 +20,15 @@ definePageMeta({
 });
 
 const selectedImage = ref(null);
-const images = ref<any>([]);
-const wallpapers = ref<any>([]);
 const isWallpaperSelected = ref(false);
 
-onMounted(async () => {
-  images.value = await useUseGetBucketItemsByFolder("designs");
-  wallpapers.value = await useUseGetBucketItemsByFolder("wallpapers");
-});
-
-// Open image preview
-const openPreview = (imgSrc: any) => {
+const openImagePreview = (imgSrc: any) => {
   selectedImage.value = imgSrc;
+  isWallpaperSelected.value = false;
+};
 
-  // Check if selected image is from wallpapers list
-  isWallpaperSelected.value = wallpapers.value.some(
-    (wallpaper: any) => wallpaper.url === imgSrc
-  );
+const openWallpaperPreview = (imgSrc: any) => {
+  selectedImage.value = imgSrc;
+  isWallpaperSelected.value = true;
 };
 </script>

@@ -14,7 +14,6 @@
     "@supabase/supabase-js": "^2.49.1",
     "motion-v": "^0.10.1",
     "nuxt": "^3.15.4",
-    "nuxt-swiper": "2.0.1",
     "pinia": "^3.0.1",
     "qss": "^3.0.0",
     "vue": "latest",

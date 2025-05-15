@@ -1,61 +1,46 @@
 <template>
-  <section class="lg:py-10">
-    <header class="py-5">
+  <section class="flex flex-col gap-y-4">
+    <header>
       <h2
-        class="text-neutral text-5xl lg:text-8xl font-neue text-right font-bold"
+        class="text-neutral text-5xl lg:text-8xl font-neue text-center font-bold"
       >
         Fresh Creations
       </h2>
     </header>
 
     <!-- Gallery Items -->
-    <swiper-container
-      class="flex w-full cursor-grab active:cursor-grabbing"
-      :pagination="{
-        clickable: true,
-      }"
-      :modules="[Pagination]"
-      :breakpoints="{
-        '0': {
-          slidesPerView: 1.1,
-          spaceBetween: 16,
-        },
-        '420': {
-          slidesPerView: 1.1,
-          spaceBetween: 16,
-        },
-        '576': {
-          slidesPerView: 2.1,
-          spaceBetween: 16,
-        },
-      }"
-    >
-      <swiper-slide v-for="(image, index) in images" :key="index">
-        <DirectionAwareHover
-          :image-url="image.url"
-          @click="emit('openModal', image.url)"
-        >
-        </DirectionAwareHover>
-      </swiper-slide>
-    </swiper-container>
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
+      <DirectionAwareHover
+        v-for="(image, index) in images"
+        :key="index"
+        :image-url="image.url"
+        @click="emit('openModal', image.url)"
+      />
+    </div>
+
+    <div class="text-center">
+      <button
+        @click="loadImages"
+        :disabled="loading || noMore"
+        class="bg-transparent border-2 border-neutral shadow-sm text-neutral font-neue text-xl md:text-3xl py-1 px-4 rounded-full hover:text-primary hover:bg-neutral"
+        :class="{
+          'hover:bg-transparent hover:!text-neutral': noMore,
+        }"
+      >
+        {{ noMore ? "No More Images" : loading ? "Loading..." : "Load More" }}
+      </button>
+    </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import type { GalleryItem } from "~/types";
-import { Pagination } from "swiper/modules";
-
 const emit = defineEmits(["openModal"]);
-defineProps<{
-  images: GalleryItem[];
-}>();
-</script>
 
-<style scoped>
-swiper-container::part(wrapper) {
-  @apply pb-10;
-}
-swiper-container::part(bullet-active) {
-  @apply bg-yellow-500;
-}
-</style>
+const folder = "designs";
+const { images, loadImages, loading, noMore } =
+  useGetBucketItemsByFolder(folder);
+
+onMounted(() => {
+  loadImages();
+});
+</script>

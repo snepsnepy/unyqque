@@ -4,7 +4,7 @@
     @click="closePreview"
   >
     <div
-      class="relative p-2 md:p-4 bg-white/50 bg-clip-padding backdrop-filter backdrop-blur-md rounded-3xl max-w-4xl w-fit border border-neutral"
+      class="relative p-2 md:p-4 bg-white/50 bg-clip-padding backdrop-filter backdrop-blur-md rounded-3xl max-w-4xl w-fit border border-neutral m-4"
       @click.stop
     >
       <div
@@ -62,7 +62,7 @@
       <img
         :src="selectedImage!"
         alt="Preview"
-        class="w-full md:w-fit md:max-w-fit max-h-[80vh] object-contain rounded-2xl"
+        class="w-full md:w-fit md:max-w-fit max-h-[80vh] rounded-2xl"
       />
     </div>
   </section>

@@ -12,7 +12,6 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxtjs/tailwindcss",
     "@nuxt/icon",
-    "nuxt-swiper",
   ],
   runtimeConfig: {
     public: {

@@ -1,9 +1,13 @@
 <template>
   <div
-    class="bg-custom-bg bg-cover bg-center bg-no-repeat min-h-screen bg-[#1D1D1D]"
+    class="bg-custom-bg bg-contain md:bg-cover bg-center bg-no-repeat min-h-screen bg-[#1D1D1D]"
   >
     <!-- Overlay with 50% black opacity -->
-    <div class="absolute inset-0 bg-[#1D1D1D]/85 z-0">
+    <div
+      :class="{
+        'absolute inset-0 bg-[#1D1D1D]/85 z-0': !isHome,
+      }"
+    >
       <section
         class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto overflow-scroll no-scrollbar"
       >
@@ -16,6 +20,8 @@
 
 <script lang="ts" setup>
 const route = useRoute();
+
+const isHome = computed(() => route.path === "/");
 </script>
 
 <style scoped>

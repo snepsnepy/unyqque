@@ -1,22 +1,22 @@
 <template>
   <dialog class="modal modal-open">
     <div
-      class="modal-box bg-white/50 p-4 md:p-6 rounded-3xl bg-clip-padding backdrop-filter backdrop-blur-md"
+      class="modal-box bg-base-content/20 p-4 md:p-6 rounded-3xl bg-clip-padding backdrop-filter backdrop-blur-md"
     >
       <div class="flex justify-between items-center">
         <h4
           v-if="!checkoutView"
-          class="font-montserrat font-semibold text-xl text-neutral"
+          class="font-delight font-semibold text-xl text-base-content"
         >
           CART (<span v-if="shoppingCart.length < 10">0</span
           >{{ shoppingCart.length }})
         </h4>
-        <h4 v-else class="font-montserrat font-semibold text-xl text-neutral">
+        <h4 v-else class="font-delight font-semibold text-xl text-base-content">
           CHECKOUT
         </h4>
         <button
           @click="emit('closeIconClicked')"
-          class="btn btn-sm btn-circle btn-ghost shadow-none border-neutral/50 hover:border-neutral text-neutral hover:text-white hover:bg-neutral/10 absolute right-4 top-4"
+          class="btn btn-sm btn-circle btn-ghost shadow-none border-base-content hover:border-base-content text-base-content hover:text-base-content hover:bg-primary/20 absolute right-4 top-4"
         >
           ✕
         </button>

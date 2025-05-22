@@ -4,7 +4,7 @@
     <button
       @click="toggleDropdown"
       :disabled="disabled"
-      class="w-full flex justify-between items-center font-montserrat font-medium border-none px-2 py-2.5 border rounded-xl bg-white/50 text-black hover:bg-white/30 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
+      class="w-full flex justify-between items-center font-delight font-light border-none px-2 py-2.5 border rounded-xl bg-base-content/85 text-neutral hover:bg-base-content/75 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
     >
       <div class="flex gap-x-2 items-center">
         <div
@@ -19,7 +19,7 @@
       </div>
       <Icon
         icon="mdi:chevron-up"
-        class="w-5 h-5 text-black"
+        class="w-5 h-5 text-neutral"
         :class="{
           'rotate-180 transition-transform duration-200': isOpen,
           'transition-transform duration-200': !isOpen,
@@ -31,7 +31,7 @@
     <div
       v-if="isOpen"
       ref="dropdownRef"
-      class="absolute w-full bottom-full bg-gray-200 rounded-b-lg shadow-lg z-10"
+      class="absolute w-full bottom-full bg-base-content rounded-b-lg shadow-lg z-10"
       :class="{
         'rounded-lg': isColorPicker || isDesignColorPicker,
       }"
@@ -46,7 +46,7 @@
           v-for="item in items"
           :key="item"
           @click="selectItem(item)"
-          class="px-4 py-2 hover:bg-primary-hover hover:text-white cursor-pointer text-neutral"
+          class="px-4 py-2 hover:bg-primary hover:text-base-content cursor-pointer font-delight font-light text-neutral"
         >
           {{ item }}
         </li>

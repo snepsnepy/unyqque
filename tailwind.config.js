@@ -32,13 +32,18 @@ module.exports = {
     fontFamily: {
       neue: ["Neue"],
       montserrat: ["Montserrat"],
+      delight: ["Delight"],
     },
     extend: {
       colors: {
-        primary: "#83E5DE",
+        primary: "#BF9264",
         "primary-hover": "#49ada7",
         "primary-content": "#FFFFFF",
-        neutral: "#444444",
+        "base-content": "#FBF8EF",
+        neutral: "#322C2B",
+      },
+      backgroundImage: {
+        "custom-bg": "url('@/assets/img/background.png')",
       },
     },
   },

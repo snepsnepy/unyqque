@@ -1,28 +1,32 @@
 <template>
-  <div class="layout bg-white">
-    <section
-      class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto overflow-scroll no-scrollbar"
+  <div
+    class="bg-custom-bg bg-contain md:bg-cover bg-center bg-no-repeat min-h-screen bg-[#1D1D1D]"
+  >
+    <!-- Overlay with 50% black opacity -->
+    <div
+      :class="{
+        'absolute inset-0 bg-[#1D1D1D]/85 z-0': !isHome,
+      }"
     >
-      <Navigation />
-
-      <!-- Logo Section -->
-      <!-- <div v-if="!isIndexPage" class="flex justify-center w-full h-fit">
-        <NuxtImg src="/img/logo.svg" alt="unyqque logo" class="w-24 md:w-44" />
-      </div> -->
-      <slot />
-    </section>
+      <section
+        class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto overflow-scroll no-scrollbar"
+      >
+        <Navigation />
+        <slot />
+      </section>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 const route = useRoute();
 
-const isIndexPage = computed(() => route.name === "index");
+const isHome = computed(() => route.path === "/");
 </script>
 
 <style scoped>
 .layout {
-  background-image: url("@/assets/img/munte.svg");
+  background-image: url("@/assets/img/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -27,3 +27,27 @@
   font-weight: 700;
   src: url("/assets/fonts/Montserrat-Bold.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Delight";
+  font-weight: 400;
+  src: url("/assets/fonts/delight-regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Delight";
+  font-weight: 500;
+  src: url("/assets/fonts/delight-medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Delight";
+  font-weight: 600;
+  src: url("/assets/fonts/delight-semibold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Delight";
+  font-weight: 700;
+  src: url("/assets/fonts/delight-bold.otf") format("truetype");
+}

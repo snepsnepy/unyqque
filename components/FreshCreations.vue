@@ -2,7 +2,7 @@
   <section class="flex flex-col gap-y-4">
     <header>
       <h2
-        class="text-neutral text-5xl lg:text-8xl font-neue text-center font-bold"
+        class="text-base-content text-5xl lg:text-8xl font-neue text-center font-bold"
       >
         Fresh Creations
       </h2>
@@ -10,10 +10,18 @@
 
     <!-- Gallery Items -->
     <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
-      <DirectionAwareHover
+      <!-- <DirectionAwareHover
         v-for="(image, index) in images"
         :key="index"
         :image-url="image.url"
+        @click="emit('openModal', image.url)"
+      /> -->
+      <img
+        :src="image.url"
+        alt="img"
+        v-for="(image, index) in images"
+        :key="index"
+        class="rounded-2xl"
         @click="emit('openModal', image.url)"
       />
     </div>
@@ -22,7 +30,7 @@
       <button
         @click="loadImages"
         :disabled="loading || noMore"
-        class="bg-transparent border-2 border-neutral shadow-sm text-neutral font-neue text-xl md:text-3xl py-1 px-4 rounded-full hover:text-primary hover:bg-neutral"
+        class="bg-transparent shadow-sm text-base-content font-neue text-2xl md:text-4xl py-1 px-4 hover:text-primary"
         :class="{
           'hover:bg-transparent hover:!text-neutral': noMore,
         }"

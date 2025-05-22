@@ -1,10 +1,10 @@
 <template>
   <section
-    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm z-50"
+    class="fixed inset-0 flex items-center justify-center bg-neutral/50 bg-opacity-70 backdrop-blur-sm z-50"
     @click="closePreview"
   >
     <div
-      class="relative p-2 md:p-4 bg-white/50 bg-clip-padding backdrop-filter backdrop-blur-md rounded-3xl max-w-4xl w-fit border border-neutral m-4"
+      class="relative bg-clip-padding backdrop-filter backdrop-blur-md rounded-3xl max-w-4xl w-fit m-4"
       @click.stop
     >
       <div
@@ -16,7 +16,7 @@
         <!-- Download Button -->
         <button
           v-if="isWallpaper"
-          class="absolute left-4 top-4 md:left-6 md:top-6 text-white text-xl md:text-3xl font-bold pl-3.5 pr-2 border-2 border-white rounded-full hover:bg-white hover:text-neutral"
+          class="absolute left-4 top-4 md:left-2 md:top-6 text-white text-xl md:text-3xl font-bold pl-3.5 pr-2 hover:text-base-content/90"
           @click.stop="downloadImage"
         >
           <div class="flex items-center flex-row gap-x-2">
@@ -40,7 +40,7 @@
 
         <!-- Close Button -->
         <button
-          class="absolute right-4 top-4 md:right-6 md:top-6 text-white text-2xl md:text-3xl font-bold border-2 border-white rounded-full hover:bg-white hover:text-neutral"
+          class="absolute right-4 top-4 md:right-4 md:top-6 text-white text-2xl md:text-3xl font-bold hover:text-base-content/90"
           @click="closePreview"
         >
           <svg

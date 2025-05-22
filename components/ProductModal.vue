@@ -1,12 +1,12 @@
 <template>
   <dialog class="modal modal-open">
     <div
-      class="modal-box bg-white/50 p-4 md:p-6 rounded-3xl bg-clip-padding backdrop-filter backdrop-blur-md"
+      class="modal-box bg-base-content/20 p-4 md:p-6 rounded-3xl bg-clip-padding backdrop-filter backdrop-blur-md"
     >
       <div method="dialog">
         <button
           @click="emit('closeIconClicked')"
-          class="btn btn-sm btn-circle btn-ghost shadow-none border-neutral/50 hover:border-neutral text-neutral hover:text-white hover:bg-neutral/10 absolute right-4 top-4"
+          class="btn btn-sm btn-circle btn-ghost hover:bg-transparent border-none hover:border-none text-2xl md:text-3xl shadow-none text-base-content hover:text-base-content/90 absolute right-4 top-4"
         >
           ✕
         </button>
@@ -21,13 +21,13 @@
         <!-- Title, Price -->
         <div class="flex flex-col gap-y-2">
           <h4
-            class="text-black font-montserrat text-xl md:text-2xl leading-6 font-semibold"
+            class="text-base-content font-delight text-xl md:text-3xl leading-6 font-semibold"
           >
             {{ store.selectedItem?.name }}
           </h4>
-          <p class="text-white font-bold text-xl md:text-2xl">
+          <p class="text-white font-bold font-delight text-xl md:text-3xl">
             {{ store.selectedItem?.price }}
-            <span class="text-black text-sm">RON</span>
+            <span class="text-primary-content text-sm font-delight">RON</span>
           </p>
         </div>
 
@@ -59,10 +59,14 @@
 
         <!-- Descriere -->
         <div class="flex flex-col gap-y-2">
-          <p class="font-montserrat font-medium text-black text-base leading-4">
+          <p
+            class="font-delight font-light text-base-content text-base leading-4"
+          >
             Description
           </p>
-          <p class="text-neutral text-sm leading-4">
+          <p
+            class="text-base-content/50 text-sm leading-4 font-delight font-light"
+          >
             Oversized tshirt 100% cotton oversized fit. We recomment ordering
             the same size as usual or a biffer one for the perfect fit.
           </p>
@@ -74,7 +78,7 @@
             <button
               @click="addItemAndClose()"
               :disabled="!hasSelectedValues"
-              class="btn border-none shadow-none w-full py-3.5 px-2 bg-white/50 hover:bg-neutral/50 text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
+              class="btn border-none font-delight font-light shadow-none w-full py-3.5 px-2 bg-base-content/85 hover:bg-primary text-neutral hover:text-base-content disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
             >
               Add to Cart
             </button>
@@ -83,7 +87,7 @@
             <button
               @click="emit('buyNowClicked')"
               :disabled="!hasSelectedValues"
-              class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-primary-hover text-black hover:text-white disabled:!bg-white/20 disabled:text-black/50 font-montserrat rounded-xl"
+              class="btn border-none font-delight font-light whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-neutral hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
             >
               Buy Now
             </button>
@@ -113,7 +117,10 @@ const addItemAndClose = () => {
 };
 
 const hasSelectedValues = computed(
-  () => store.selectedItem?.size && store.selectedItem?.color
+  () =>
+    store.selectedItem?.size &&
+    store.selectedItem?.color &&
+    store.selectedItem?.designColor
 );
 
 const imageUrl = computed(() => {

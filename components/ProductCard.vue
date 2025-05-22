@@ -1,33 +1,36 @@
 <template>
   <section
-    class="flex flex-col rounded-3xl border border-neutral gap-y-2 h-fit"
+    class="flex flex-col rounded-3xl border border-base-content/10 gap-y-2 h-fit"
   >
     <div
-      class="flex flex-col gap-y-4 bg-white/50 bg-clip-padding backdrop-filter backdrop-blur-md rounded-3xl p-4"
+      class="flex flex-col gap-y-4 bg-base-content/5 bg-clip-padding backdrop-filter backdrop-blur-md rounded-3xl p-4"
     >
       <p
-        class="text-black text-center font-extrabold font-montserrat text-lg leading-4 md:text-2xl"
+        class="text-base-content text-center font-extrabold font-delight text-lg leading-4 md:text-3xl"
       >
         {{ product.name }}
       </p>
 
-      <img :src="product.imgSrc" alt="bbs" class="w-full h-full" />
+      <img :src="product.imgSrc" alt="product" class="w-full h-full" />
 
-      <div
-        class="flex flex-row justify-between items-center bg-neutral/40 p-2 rounded-2xl"
-      >
-        <p class="font-extrabold text-white tracking-[1px] text-2xl pl-2">
+      <div class="flex flex-col gap-y-4 justify-between items-center p-2">
+        <p
+          class="font-extrabold text-base-content font-delight tracking-[1px] text-3xl pl-2"
+        >
           {{ product.price }}
-          <span class="text-white text-sm font-bold font-montserrat">RON</span>
+          <span class="text-primary-content text-sm font-bold font-delight"
+            >RON</span
+          >
         </p>
 
         <button
-          class="btn bg-primary hover:bg-primary-hover border-none shadow-sm text-neutral text-sm md:text-base hover:text-white font-montserrat rounded-xl"
+          class="btn bg-base-content border-none shadow-sm text-neutral text-sm md:text-base hover:text-neutral/80 font-delight font-light rounded-xl"
           @click="emit('shopIconClicked')"
         >
+          Add to Cart
           <Icon
             name="material-symbols:shopping-cart-checkout-rounded"
-            class="w-6 h-6"
+            class="w-6 h-6 bg-neutral"
           />
         </button>
       </div>

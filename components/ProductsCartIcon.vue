@@ -8,7 +8,7 @@
         {{ shoppingCart.length }}
       </p>
     </div>
-    <Icon name="solar:cart-outline" class="w-8 h-8 mr-3 text-neutral" />
+    <Icon name="solar:cart-outline" class="w-8 h-8 mr-3 text-base-content" />
   </div>
 </template>
 

@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col gap-y-2 md:gap-y-8 pt-8">
-    <h4 class="text-neutral text-sm md:text-base md:leading-4 font-montserrat">
+    <h4
+      class="text-base-content text-sm md:text-base md:leading-4 font-delight font-light"
+    >
       Please fill out the form below. Enter your personal details.
     </h4>
     <div class="flex flex-col gap-y-2 md:gap-y-4">
@@ -17,7 +19,7 @@
     </div>
 
     <button
-      class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-primary-hover text-neutral hover:text-white disabled:!bg-white/20 disabled:text-neutral/50 font-montserrat rounded-xl"
+      class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-neutral hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 font-delight font-light rounded-xl"
       :disabled="!formFilled"
       @click="sendOrderViaWhatsApp"
     >
@@ -30,10 +32,12 @@
       <div>
         <Icon
           name="material-symbols:info-outline-rounded"
-          class="text-neutral/70"
+          class="text-base-content/60"
         />
       </div>
-      <p class="text-neutral/70 text-xs md:text-sm w-full">
+      <p
+        class="text-base-content/60 text-xs md:text-sm w-full font-delight font-light"
+      >
         After placing your order, you will be redirected to WhatsApp with a
         pre-filled message containing your order details. Please review the
         information and tap 'Send' to complete your request.

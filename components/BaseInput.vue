@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col gap-y-1 !h-20">
-    <p class="text-neutral font-montserrat text-xs leading-3 font-medium">
+    <p class="text-base-content font-delight text-xs leading-3 font-light">
       {{ label }} <span class="text-secondary">*</span>
     </p>
     <input
-      class="w-full bg-white/50 text-neutral font-medium font-montserrat rounded-lg h-10 p-1 focus:outline-none"
+      class="w-full bg-white/50 text-neutral font-delight font-light rounded-lg h-10 p-1 focus:outline-none"
       :class="{
         'border border-[#F72C5B]/50': modelValue && modelValue.length < 5,
         'border border-[#9EDF9C]': modelValue && modelValue.length > 4,
@@ -16,7 +16,7 @@
     />
     <span
       v-if="modelValue && modelValue.length < 5"
-      class="py-1 text-xs leading-3 text-[#F72C5B]/80 font-semibold"
+      class="py-1 text-xs leading-3 text-[#F72C5B]/80 font-delight font-medium"
       >Input must be at least 5 characters long.</span
     >
   </div>

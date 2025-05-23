@@ -14,8 +14,8 @@
 
       <div class="flex flex-col gap-y-4 md:gap-y-4 pt-8">
         <!-- Product Image -->
-        <div class="rounded-3xl">
-          <img :src="imageUrl" alt="product" />
+        <div class="flex justify-center">
+          <img :src="imageUrl" alt="product" class="w-2/3 h-2/3" />
         </div>
 
         <!-- Title, Price -->
@@ -31,8 +31,8 @@
           </p>
         </div>
 
-        <div class="flex flex-col gap-4" v-if="store.selectedItem">
-          <div class="flex flex-col md:flex-row gap-x-4 gap-y-4">
+        <div class="flex flex-col gap-y-2 md:gap-4" v-if="store.selectedItem">
+          <div class="flex flex-col md:flex-row gap-x-4 gap-y-2">
             <Dropdown
               :items="sizes"
               :placeholder="'Select a size'"
@@ -60,12 +60,12 @@
         <!-- Descriere -->
         <div class="flex flex-col gap-y-2">
           <p
-            class="font-delight font-light text-base-content text-base leading-4"
+            class="font-delight font-light text-base-content text-md leading-[14px] md:text-base md:leading-4"
           >
             Description
           </p>
           <p
-            class="text-base-content/50 text-sm leading-4 font-delight font-light"
+            class="text-base-content/50 text-xs leading-[14px] font-delight font-light"
           >
             Oversized tshirt 100% cotton oversized fit. We recomment ordering
             the same size as usual or a biffer one for the perfect fit.

@@ -16,7 +16,7 @@
         </h4>
         <button
           @click="emit('closeIconClicked')"
-          class="btn btn-sm btn-circle btn-ghost shadow-none border-base-content hover:border-base-content text-base-content hover:text-base-content hover:bg-primary/20 absolute right-4 top-4"
+          class="btn btn-sm btn-circle btn-ghost hover:bg-transparent border-none hover:border-none text-2xl md:text-3xl shadow-none text-base-content hover:text-base-content/90 absolute right-4 top-4"
         >
           ✕
         </button>

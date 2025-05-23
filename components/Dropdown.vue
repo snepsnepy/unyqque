@@ -15,7 +15,7 @@
             'bg-black': selectedItem === 'Black',
           }"
         ></div>
-        <p>{{ selectedItem || placeholder }}</p>
+        <p class="text-sm md:text-base">{{ selectedItem || placeholder }}</p>
       </div>
       <Icon
         icon="mdi:chevron-up"

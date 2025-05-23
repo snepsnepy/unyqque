@@ -1,9 +1,10 @@
 <template>
   <!-- Products Cart -->
   <ProductsCartIcon
+    v-if="store.shoppingCart.length"
     :shopping-cart="store.shoppingCart"
     class="hover:cursor-pointer"
-    @click="store.shoppingCart.length ? openCartModal() : ''"
+    @click="openCartModal()"
   />
 
   <!-- Shop container -->

@@ -72,6 +72,17 @@
       </div>
     </div>
   </section>
+
+  <!-- Logo -->
+  <div
+    class="relative flex flex-col md:flex-row items-center justify-center h-[50px] pb-10"
+  >
+    <span
+      class="absolute -top-10 md:relative md:top-0 text-xs font-delight font-medium text-base-content"
+      >POWERED BY</span
+    >
+    <img src="@/assets/img/snep-07.png" alt="snep-software" width="230" />
+  </div>
 </template>
 
 <script setup lang="ts">

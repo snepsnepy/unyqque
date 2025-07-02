@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   app: {
     head: {
-      title: "UNYQQUE",
+      title: "unyqque",
     },
   },
   devtools: { enabled: true },

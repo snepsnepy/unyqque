@@ -42,7 +42,9 @@ definePageMeta({
 });
 
 const { $supabase } = useNuxtApp();
-const { data } = await $supabase.from("products").select("*");
+const { data } = await $supabase.from("products").select("*").order("name", {
+  ascending: true,
+});
 
 const productModalOpen = ref(false);
 const cartModalOpen = ref(false);

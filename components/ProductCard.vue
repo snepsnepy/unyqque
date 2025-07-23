@@ -46,6 +46,4 @@ const emit = defineEmits(["shopIconClicked"]);
 const props = defineProps<{
   product: ShopItem;
 }>();
-
-console.log(props.product.imgSrc);
 </script>

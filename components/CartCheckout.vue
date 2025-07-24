@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-y-2 md:gap-y-8 pt-8">
     <h4
-      class="text-base-content text-sm md:text-base md:leading-4 font-delight font-light"
+      class="text-base-content text-sm md:text-base md:leading-4 font-delight font-light tracking-wider"
     >
       Please fill out the form below. Enter your personal details.
     </h4>
@@ -36,7 +36,7 @@
         />
       </div>
       <p
-        class="text-base-content/60 text-xs md:text-sm w-full font-delight font-light"
+        class="text-base-content/60 text-xs md:text-sm w-full font-delight font-light tracking-wider"
       >
         After placing your order, you will be redirected to WhatsApp with a
         pre-filled message containing your order details. Please review the

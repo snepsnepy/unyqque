@@ -26,6 +26,7 @@
               <b class="font-semibold">Color</b>: {{ item.color }}
             </p>
             <p
+              v-if="item.designColor"
               class="text-neutral font-light font-delight text-xs leading-3 md:text-sm md:leading-[14px]"
             >
               <b class="font-semibold">Design Color</b>: {{ item.designColor }}
@@ -68,14 +69,20 @@
     <!-- Total Section -->
     <section class="flex flex-col gap-y-2 pt-2">
       <div class="flex justify-between items-center text-base-content">
-        <p class="font-delight font-semibold text-sm md:text-base">Subtotal:</p>
+        <p
+          class="font-delight font-semibold text-sm md:text-base tracking-wider"
+        >
+          Subtotal:
+        </p>
         <p class="font-montserrat font-bold text-sm md:text-base">
           {{ subtotalPrice }} RON
         </p>
       </div>
 
       <div class="flex justify-between items-center text-base-content">
-        <p class="font-delight font-semibold text-sm md:text-base">
+        <p
+          class="font-delight font-semibold text-sm md:text-base tracking-wider"
+        >
           Shipping Fee:
         </p>
         <p class="font-delight font-bold text-sm md:text-base">
@@ -110,7 +117,7 @@
         class="text-base-content/60"
       />
       <p
-        class="text-base-content/60 text-xs md:text-sm font-delight font-light"
+        class="text-base-content/60 text-xs md:text-sm font-delight font-light tracking-wider"
       >
         Your order will be shipped within 5-7 days.
       </p>

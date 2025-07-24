@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col gap-y-1 !h-20">
-    <p class="text-base-content font-delight text-xs leading-3 font-light">
+    <p
+      class="text-base-content font-delight text-xs leading-3 font-light tracking-wider"
+    >
       {{ label }} <span class="text-secondary">*</span>
     </p>
     <input

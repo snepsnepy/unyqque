@@ -8,14 +8,20 @@ export const useGenerateWappLink = (
 
   // Format the items
   const itemsMessage = shoppingCart
-    .map(
-      (item: ShopItem, index: number) =>
-        `*Item ${index + 1}:* \n  *Title:* ${item.name}\n  *Color:* ${
-          item.color
-        }\n  *Design Color:* ${item.designColor}\n  *Size:* ${
-          item.size
-        }\n  *Price:* ${item.price}\n`
-    )
+    .map((item: ShopItem, index: number) => {
+      let itemDetails = `*Item ${index + 1}:* \n  *Title:* ${
+        item.name
+      }\n  *Color:* ${item.color}`;
+
+      // Only include design color if the item has one
+      if (item.designColor) {
+        itemDetails += `\n  *Design Color:* ${item.designColor}`;
+      }
+
+      itemDetails += `\n  *Size:* ${item.size}\n  *Price:* ${item.price}\n`;
+
+      return itemDetails;
+    })
     .join("\n");
 
   const totalPrice =

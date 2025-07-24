@@ -107,7 +107,7 @@ const store = useShopStore();
 
 const { $supabase } = useNuxtApp();
 
-const sizes = ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL"];
+const sizes = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
 const colors = ["Black", "White"];
 const designColor = store.selectedItem?.designcolors;
 

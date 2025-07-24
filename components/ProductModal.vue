@@ -35,14 +35,14 @@
           <div class="flex flex-col md:flex-row gap-x-4 gap-y-2">
             <Dropdown
               :items="sizes"
-              :placeholder="'Select a size'"
+              placeholder="Select a size"
               :is-color-picker="false"
               v-model:product-size="store.selectedItem!.size"
             />
 
             <Dropdown
               :items="colors"
-              :placeholder="'Select a color'"
+              placeholder="Select a color"
               :is-color-picker="true"
               v-model:product-color="store.selectedItem!.color"
             />
@@ -50,9 +50,9 @@
 
           <Dropdown
             :items="designColor!"
-            :placeholder="'Select a design color'"
+            :placeholder="designColorPlaceholder"
             :is-design-color-picker="true"
-            :disabled="!store.selectedItem!.color"
+            :disabled="!store.selectedItem!.color || !designColor!.length"
             v-model:product-color="store.selectedItem!.designColor"
           />
         </div>
@@ -65,7 +65,7 @@
             Description
           </p>
           <p
-            class="text-base-content/50 text-xs leading-[14px] font-delight font-light"
+            class="text-base-content/50 text-xs leading-[14px] font-delight font-light tracking-wider"
           >
             Oversized tshirt 100% cotton oversized fit. We recomment ordering
             the same size as usual or a biffer one for the perfect fit.
@@ -116,12 +116,27 @@ const addItemAndClose = () => {
   emit("closeIconClicked");
 };
 
-const hasSelectedValues = computed(
-  () =>
-    store.selectedItem?.size &&
-    store.selectedItem?.color &&
-    store.selectedItem?.designColor
-);
+const designColorPlaceholder = computed(() => {
+  if (store.selectedItem!.color && !designColor!.length) {
+    return "This product has no design colors";
+  }
+
+  return "Select a design color";
+});
+
+const hasSelectedValues = computed(() => {
+  if (!store.selectedItem?.size || !store.selectedItem?.color) {
+    return false;
+  }
+
+  // If product has design colors available, require one to be selected
+  if (designColor && designColor.length > 0) {
+    return !!store.selectedItem?.designColor;
+  }
+
+  // If no design colors available, don't require designColor selection
+  return true;
+});
 
 const imageUrl = computed(() => {
   let fileName = "";

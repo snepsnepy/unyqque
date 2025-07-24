@@ -43,7 +43,15 @@ module.exports = {
         neutral: "#322C2B",
       },
       backgroundImage: {
-        "custom-bg": "url('@/assets/img/background.png')",
+        "custom-bg": "url('@/assets/img/rx7-bg.png')",
+      },
+      backgroundSize: {
+        zoom: "120%",
+        "zoom-in": "180%",
+        "zoom-out": "110%",
+      },
+      backgroundPosition: {
+        "bottom-2/3": "center 66.67%",
       },
     },
   },

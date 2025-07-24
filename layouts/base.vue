@@ -1,35 +1,18 @@
 <template>
   <div
-    class="bg-custom-bg bg-contain md:bg-cover bg-center bg-no-repeat min-h-screen bg-[#1D1D1D]"
+    class="bg-custom-bg bg-zoom-in md:bg-zoom-out bg-bottom-2/3 bg-no-repeat min-h-screen bg-[#1D1D1D] relative"
   >
-    <!-- Overlay with 50% black opacity -->
-    <div
-      :class="{
-        'absolute inset-0 bg-[#1D1D1D]/85 z-0': !isHome,
-      }"
+    <!-- Overlay with 85% dark opacity -->
+    <div class="absolute inset-0 bg-[#1D1D1D]/85 z-0"></div>
+
+    <!-- Content layer -->
+    <section
+      class="relative z-10 flex flex-col flex-grow gap-8 h-dvh container mx-auto overflow-scroll no-scrollbar"
     >
-      <section
-        class="flex flex-col flex-grow gap-8 h-dvh n container mx-auto overflow-scroll no-scrollbar"
-      >
-        <Navigation />
-        <slot />
-      </section>
-    </div>
+      <Navigation />
+      <slot />
+    </section>
   </div>
 </template>
 
-<script lang="ts" setup>
-const route = useRoute();
-
-const isHome = computed(() => route.path === "/");
-</script>
-
-<style scoped>
-.layout {
-  background-image: url("@/assets/img/background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: screen;
-}
-</style>
+<script lang="ts" setup></script>

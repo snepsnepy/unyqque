@@ -3,43 +3,43 @@
     <button
       @click="moveTo('/gallery')"
       :class="getActiveClass('/gallery')"
-      class="font-neue text-4xl md:text-7xl -tracking-[1px] hover:text-primary"
+      class="font-delight font-black text-4xl md:text-7xl -tracking-[1px]"
     >
-      <SparklesText
+      <LineShadowText
         v-if="getActivePath('/gallery')"
-        text="GALLERY"
         class="text-2xl md:text-7xl"
-        :colors="{ first: '#FFA55D', second: '#FEBA17' }"
-        :sparkles-count="8"
-      />
+        shadow-color="white"
+      >
+        GALLERY
+      </LineShadowText>
       <p v-else class="text-base-content">GALLERY</p>
     </button>
     <button
       @click="moveTo('/shop')"
       :class="getActiveClass('/shop')"
-      class="font-neue text-4xl md:text-7xl -tracking-[1px] hover:text-primary"
+      class="font-delight font-black text-4xl md:text-7xl -tracking-[1px]"
     >
-      <SparklesText
+      <LineShadowText
         v-if="getActivePath('/shop')"
-        text="SHOP"
         class="text-2xl md:text-7xl"
-        :colors="{ first: '#FFA55D', second: '#FEBA17' }"
-        :sparkles-count="8"
-      />
+        shadow-color="white"
+      >
+        SHOP
+      </LineShadowText>
       <p v-else class="text-base-content">SHOP</p>
     </button>
     <button
       @click="moveTo('/contact')"
       :class="getActiveClass('/contact')"
-      class="font-neue text-4xl md:text-7xl -tracking-[1px] hover:text-primary"
+      class="font-delight font-black text-4xl md:text-7xl -tracking-[1px]"
     >
-      <SparklesText
+      <LineShadowText
         v-if="getActivePath('/contact')"
-        text="CONTACT"
-        class="text-4xl md:text-7xl"
-        :colors="{ first: '#FFA55D', second: '#FEBA17' }"
-        :sparkles-count="8"
-      />
+        class="text-2xl md:text-7xl"
+        shadow-color="white"
+      >
+        CONTACT
+      </LineShadowText>
       <p v-else class="text-base-content">CONTACT</p>
     </button>
   </div>
@@ -56,6 +56,6 @@ const getActivePath = computed(() => (path: string) => route.path === path);
 
 const getActiveClass = computed(
   () => (path: string) =>
-    route.path === path ? "text-[#BF9264]" : "text-neutral"
+    route.path === path ? "text-base-content" : "text-neutral"
 );
 </script>

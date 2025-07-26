@@ -23,16 +23,12 @@
           >
         </p>
 
-        <button
-          class="btn bg-base-content border-none shadow-sm text-neutral text-sm md:text-base hover:text-neutral/80 font-delight font-light rounded-xl"
+        <InteractiveHoverButton
+          :display-icon="true"
+          text="Add to Cart"
+          class="w-fit font-delight font-medium"
           @click="emit('shopIconClicked')"
-        >
-          Add to Cart
-          <Icon
-            name="material-symbols:shopping-cart-checkout-rounded"
-            class="w-6 h-6 bg-neutral"
-          />
-        </button>
+        />
       </div>
     </div>
   </section>

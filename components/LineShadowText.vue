@@ -4,10 +4,10 @@
     class="shadow-color"
     :class="
       cn(
-        'relative z-0 inline-block',
-        'after:absolute after:left-[0.1em] after:top-[0.1em] after:-z-10',
-        'after:bg-[linear-gradient(45deg,transparent_30%,var(--shadow-color)_30%,var(--shadow-color)_70%,transparent_70%)]',
-        'after:bg-[length:0.15em_0.15em]',
+        'relative z-0 inline-flex',
+        'after:absolute after:left-[0em] after:top-[0.1em] after:-z-10',
+        'after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]',
+        'after:bg-[length:0.06em_0.06em] after:bg-clip-text after:text-transparent',
         'after:content-[attr(data-text)]',
         'animate-line-shadow',
         props.class

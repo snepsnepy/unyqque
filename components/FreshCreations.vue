@@ -2,7 +2,7 @@
   <section class="flex flex-col gap-y-4">
     <header>
       <h2
-        class="text-base-content text-5xl lg:text-8xl font-neue text-center font-bold"
+        class="text-base-content text-3xl lg:text-6xl font-delight text-center font-black uppercase"
       >
         Fresh Creations
       </h2>
@@ -27,16 +27,19 @@
     </div>
 
     <div class="text-center">
-      <button
+      <InteractiveHoverButton
+        v-if="!noMore"
+        :text="loading ? 'Loading...' : 'Load More'"
+        class="w-fit font-delight font-medium"
         @click="loadImages"
-        :disabled="loading || noMore"
-        class="bg-transparent shadow-sm text-base-content font-neue text-2xl md:text-4xl py-1 px-4 hover:text-primary"
-        :class="{
-          'hover:bg-transparent hover:!text-neutral': noMore,
-        }"
+      />
+
+      <p
+        v-else
+        class="text-base-content font-delight font-semibold text-xl md:text-2xl uppercase"
       >
-        {{ noMore ? "No More Images" : loading ? "Loading..." : "Load More" }}
-      </button>
+        No more images
+      </p>
     </div>
   </section>
 </template>

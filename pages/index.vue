@@ -10,7 +10,7 @@
       <img
         src="@/assets/img/rx7-bg.png"
         alt="Hero image"
-        class="w-2/3 object-contain"
+        class="w-full max-w-xs md:max-w-3xl object-contain"
       />
       <h1
         class="text-lg leading-5 md:text-5xl font-delight font-medium text-base-content text-center"

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-custom-bg bg-zoom-in md:bg-zoom-out bg-bottom-2/3 bg-no-repeat min-h-screen bg-[#1D1D1D] relative"
+    class="bg-custom-bg bg-zoom-in md:bg-zoom-out bg-bottom-2/3 bg-no-repeat bg-[#1D1D1D] relative"
   >
     <!-- Overlay with 85% dark opacity -->
     <div class="absolute inset-0 bg-[#1D1D1D]/85 z-0"></div>

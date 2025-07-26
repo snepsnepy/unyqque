@@ -1,14 +1,39 @@
 <template>
-  <section
-    class="flex flex-col items-center justify-end gap-y-8 py-2 md:py-6 h-full"
-  >
-    <div
-      class="flex flex-col items-center md:flex-row gap-x-2 font-delight text-lg leading-5 md:text-4xl text-neutral font-semibold"
+  <section class="flex flex-col h-full">
+    <!-- Spacer to push content to center -->
+    <div class="flex-1"></div>
+
+    <!-- Main content centered -->
+    <section
+      class="flex flex-col gap-y-8 md:flex-row items-center justify-between"
     >
-      <span class="whitespace-nowrap text-base-content">AUTOMOTIVE DESIGN</span>
-      <span class="text-primary">&</span>
-      <span class="text-base-content"> ENGINEERING</span>
-    </div>
+      <img
+        src="@/assets/img/rx7-bg.png"
+        alt="Hero image"
+        class="w-2/3 object-contain"
+      />
+      <h1
+        class="text-lg leading-5 md:text-5xl font-delight font-medium text-base-content text-center"
+      >
+        get yourself <br />
+        the best <br />
+        <span class="font-black">AUTOMOTIVE</span> <br />
+        merch <br />
+        and be <br />
+        <span class="font-black">UNYQQUE</span>
+      </h1>
+    </section>
+
+    <!-- Spacer to push footer to bottom -->
+    <div class="flex-1"></div>
+
+    <footer
+      class="flex flex-col items-center md:flex-row gap-x-2 font-delight text-lg leading-5 md:text-4xl text-base-content font-medium justify-center pb-4"
+    >
+      <span>automotive design</span>
+      <span class="font-black">&</span>
+      <span>engineering</span>
+    </footer>
   </section>
 </template>
 

@@ -7,7 +7,7 @@
     >
       <LineShadowText
         v-if="getActivePath('/gallery')"
-        class="text-2xl md:text-7xl"
+        class="font-delight font-black text-4xl md:text-7xl -tracking-[1px]"
         shadow-color="white"
       >
         GALLERY
@@ -21,7 +21,7 @@
     >
       <LineShadowText
         v-if="getActivePath('/shop')"
-        class="text-2xl md:text-7xl"
+        class="font-delight font-black text-4xl md:text-7xl -tracking-[1px]"
         shadow-color="white"
       >
         SHOP
@@ -35,7 +35,7 @@
     >
       <LineShadowText
         v-if="getActivePath('/contact')"
-        class="text-2xl md:text-7xl"
+        class="font-delight font-black text-4xl md:text-7xl -tracking-[1px]"
         shadow-color="white"
       >
         CONTACT
@@ -46,6 +46,8 @@
 </template>
 
 <script setup lang="ts">
+import LineShadowText from "@/components/LineShadowText.vue";
+
 const route = useRoute();
 
 const moveTo = (path: string) => {

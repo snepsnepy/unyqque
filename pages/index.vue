@@ -10,10 +10,9 @@
       <NuxtImg
         :src="heroImageUrl"
         alt="Hero image"
-        class="w-full max-w-xs md:max-w-xl lg:max-w-3xl object-contain"
+        class="w-full max-w-xs lg:max-w-[650px] xl:max-w-3xl object-contain"
         quality="70"
         format="webp"
-        sizes="xs:320px md:576px lg:768px"
       />
       <h1
         class="text-lg leading-5 md:text-5xl font-delight font-medium text-base-content text-center"
@@ -47,6 +46,4 @@ definePageMeta({
 
 const { getImageUrl } = useGetBucketImage("gallery", "hero/hero-image.png");
 const heroImageUrl = getImageUrl();
-
-console.log(heroImageUrl);
 </script>

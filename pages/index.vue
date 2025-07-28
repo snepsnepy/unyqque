@@ -7,10 +7,13 @@
     <section
       class="flex flex-col gap-y-8 md:flex-row items-center justify-between"
     >
-      <img
-        src="@/assets/img/rx7-bg.png"
+      <NuxtImg
+        :src="heroImageUrl"
         alt="Hero image"
-        class="w-full max-w-xs md:max-w-3xl object-contain"
+        class="w-full max-w-xs md:max-w-xl lg:max-w-3xl object-contain"
+        quality="70"
+        format="webp"
+        sizes="xs:320px md:576px lg:768px"
       />
       <h1
         class="text-lg leading-5 md:text-5xl font-delight font-medium text-base-content text-center"
@@ -41,4 +44,7 @@
 definePageMeta({
   layout: "base",
 });
+
+const { getImageUrl } = useGetBucketImage("gallery", "hero/hero-image.png");
+const heroImageUrl = getImageUrl();
 </script>

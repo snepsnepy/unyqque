@@ -16,12 +16,16 @@
         :image-url="image.url"
         @click="emit('openModal', image.url)"
       /> -->
-      <img
-        :src="image.url"
-        alt="img"
+      <NuxtImg
         v-for="(image, index) in images"
         :key="index"
-        class="rounded-2xl"
+        :src="image.url"
+        :alt="image.name"
+        class="rounded-2xl w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+        quality="80"
+        format="webp"
+        sizes="sm:150px md:200px lg:250px"
+        loading="lazy"
         @click="emit('openModal', image.url)"
       />
     </div>

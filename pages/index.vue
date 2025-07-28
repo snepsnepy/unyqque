@@ -10,7 +10,7 @@
       <NuxtImg
         :src="heroImageUrl"
         alt="Hero image"
-        class="w-full max-w-xs lg:max-w-[530px] xl:max-w-3xl"
+        class="w-full max-w-xs lg:max-w-[500px] xl:max-w-3xl"
         quality="70"
         format="webp"
       />

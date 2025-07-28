@@ -15,7 +15,14 @@
       <div class="flex flex-col gap-y-4 md:gap-y-4 pt-8">
         <!-- Product Image -->
         <div class="flex justify-center">
-          <img :src="imageUrl" alt="product" class="w-2/3 h-2/3" />
+          <NuxtImg
+            :src="imageUrl"
+            alt="product"
+            class="w-2/3 h-2/3 object-contain rounded-lg"
+            quality="90"
+            format="webp"
+            sizes="sm:300px md:400px lg:500px"
+          />
         </div>
 
         <!-- Title, Price -->

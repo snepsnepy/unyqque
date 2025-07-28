@@ -11,7 +11,15 @@
         {{ product.name }}
       </p>
 
-      <img :src="product.imgSrc" alt="product" class="w-full h-full" />
+      <NuxtImg
+        :src="product.imgSrc"
+        alt="product"
+        class="w-full h-full object-cover rounded-lg"
+        quality="85"
+        format="webp"
+        sizes="sm:250px md:300px lg:350px"
+        loading="lazy"
+      />
 
       <div class="flex flex-col gap-y-4 justify-between items-center p-2">
         <p

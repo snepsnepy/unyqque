@@ -6,7 +6,15 @@
       v-for="(item, index) in shoppingCart"
       :key="index"
     >
-      <img :src="item.imgSrc" alt="product" class="w-24" />
+      <NuxtImg
+        :src="item.imgSrc"
+        alt="product"
+        class="w-24 h-24 object-cover rounded-lg"
+        quality="80"
+        format="webp"
+        sizes="96px"
+        loading="lazy"
+      />
       <div class="flex flex-col gap-y-6 w-full">
         <div class="flex flex-col gap-y-2">
           <p

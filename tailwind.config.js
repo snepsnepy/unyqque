@@ -43,7 +43,7 @@ module.exports = {
         neutral: "#322C2B",
       },
       backgroundImage: {
-        "custom-bg": "url('@/assets/img/rx7-bg.png')",
+        "custom-bg": "var(--hero-bg-image)",
       },
       backgroundSize: {
         zoom: "120%",

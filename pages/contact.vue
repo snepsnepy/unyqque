@@ -7,13 +7,13 @@
         <p
           class="text-base-content text-2xl md:text-6xl font-medium font-delight whitespace-nowrap"
         >
-          phone:
+          phone <span class="font-black">:</span>
         </p>
         <a
           href="tel:+40738950590"
-          class="text-base-content text-3xl leading-6 md:text-6xl font-delight font-black whitespace-nowrap"
+          class="text-base-content text-3xl leading-6 md:text-6xl font-delight font-medium whitespace-nowrap"
         >
-          +40 738 950 590
+          <span class="font-black">+</span>40 738 950 590
         </a>
       </div>
 
@@ -21,14 +21,14 @@
         <p
           class="text-base-content text-2xl md:text-6xl font-medium font-delight whitespace-nowrap"
         >
-          personal instagram:
+          personal instagram<span class="font-black">:</span>
         </p>
 
         <LinkPreview url="https://www.instagram.com/nyqqu/">
           <p
-            class="text-base-content text-3xl leading-6 md:text-6xl font-delight font-black"
+            class="text-base-content text-3xl leading-6 md:text-6xl font-delight font-medium"
           >
-            @nyqqu
+            <span class="font-black">@</span>nyqqu
           </p>
         </LinkPreview>
       </div>
@@ -37,13 +37,13 @@
         <p
           class="text-base-content text-2xl md:text-6xl font-medium font-delight whitespace-nowrap"
         >
-          shop instagram:
+          shop instagram<span class="font-black">:</span>
         </p>
         <LinkPreview url="https://www.instagram.com/unyqque/">
           <p
-            class="text-base-content text-3xl leading-6 md:text-6xl font-delight font-black"
+            class="text-base-content text-3xl leading-6 md:text-6xl font-delight font-medium"
           >
-            @unyqque
+            <span class="font-black">@</span>unyqque
           </p>
         </LinkPreview>
       </div>

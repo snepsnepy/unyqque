@@ -29,8 +29,8 @@
     <div class="text-center">
       <InteractiveHoverButton
         v-if="!noMore"
-        :text="loading ? 'Loading...' : 'Load More'"
-        class="w-fit font-delight font-medium"
+        :text="loading ? 'LOADING...' : 'LOAD MORE'"
+        class="w-fit font-delight font-medium text-base-content"
         @click="loadImages"
       />
 

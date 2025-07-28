@@ -26,7 +26,7 @@
         <InteractiveHoverButton
           :display-icon="true"
           text="Add to Cart"
-          class="w-fit font-delight font-medium"
+          class="w-fit font-delight font-medium text-base-content"
           @click="emit('shopIconClicked')"
         />
       </div>

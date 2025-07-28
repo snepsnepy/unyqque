@@ -20,6 +20,8 @@ module.exports = {
 
       lg: "1440px",
       // => @media (min-width: 1440px) { ... }
+
+      xl: "1920px",
     },
     container: {
       padding: {

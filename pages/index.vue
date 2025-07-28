@@ -5,12 +5,12 @@
 
     <!-- Main content centered -->
     <section
-      class="flex flex-col gap-y-8 md:flex-row items-center justify-between"
+      class="flex flex-col gap-y-8 md:flex-row items-center justify-evenly"
     >
       <NuxtImg
         :src="heroImageUrl"
         alt="Hero image"
-        class="w-full max-w-xs lg:max-w-[650px] xl:max-w-3xl object-contain"
+        class="w-full max-w-xs lg:max-w-[530px] xl:max-w-3xl"
         quality="70"
         format="webp"
       />

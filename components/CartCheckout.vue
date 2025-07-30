@@ -19,7 +19,7 @@
     </div>
 
     <button
-      class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-neutral hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 font-delight font-light rounded-xl"
+      class="btn border-none whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-base-content hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 font-delight font-light rounded-xl"
       :disabled="!formFilled"
       @click="sendOrderViaWhatsApp"
     >

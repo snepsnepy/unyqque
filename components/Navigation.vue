@@ -58,6 +58,8 @@ const getActivePath = computed(() => (path: string) => route.path === path);
 
 const getActiveClass = computed(
   () => (path: string) =>
-    route.path === path ? "text-base-content" : "text-neutral"
+    route.path === path
+      ? "text-base-content hover:scale-none"
+      : "hover:scale-105 transition-transform duration-200"
 );
 </script>

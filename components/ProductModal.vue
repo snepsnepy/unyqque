@@ -18,7 +18,7 @@
           <NuxtImg
             :src="imageUrl"
             alt="product"
-            class="w-2/3 h-2/3 object-contain rounded-lg"
+            class="w-full object-contain rounded-lg"
             quality="90"
             format="webp"
             sizes="sm:300px md:400px lg:500px"
@@ -26,7 +26,7 @@
         </div>
 
         <!-- Title, Price -->
-        <div class="flex flex-col gap-y-2">
+        <div class="flex flex-row justify-between md:flex-col gap-y-2">
           <h4
             class="text-base-content font-delight text-xl md:text-3xl leading-6 font-semibold"
           >
@@ -39,7 +39,7 @@
         </div>
 
         <div class="flex flex-col gap-y-2 md:gap-4" v-if="store.selectedItem">
-          <div class="flex flex-col md:flex-row gap-x-4 gap-y-2">
+          <div class="flex flex-row gap-x-2 gap-y-2">
             <Dropdown
               :items="sizes"
               placeholder="Select a size"
@@ -80,7 +80,7 @@
         </div>
 
         <!-- Buttons -->
-        <div class="flex flex-col md:flex-row gap-x-4 gap-y-2 w-full">
+        <div class="flex flex-row gap-2 w-full">
           <div class="w-full">
             <button
               @click="addItemAndClose()"
@@ -94,7 +94,7 @@
             <button
               @click="emit('buyNowClicked')"
               :disabled="!hasSelectedValues"
-              class="btn border-none font-delight font-light whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-neutral hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
+              class="btn border-none font-delight font-light whitespace-nowrap shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-base-content hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
             >
               Buy Now
             </button>
@@ -148,11 +148,18 @@ const hasSelectedValues = computed(() => {
 const imageUrl = computed(() => {
   let fileName = "";
 
-  if (store.selectedItem?.designColor) {
+  if (store.selectedItem?.designColor && store.selectedItem?.color) {
+    // Both color and design color selected
     fileName = `${
       store.selectedItem?.name
     }_${store.selectedItem?.color?.toLowerCase()}_${store.selectedItem?.designColor?.toLowerCase()}.png`;
+  } else if (store.selectedItem?.color) {
+    // Only color selected, show color variant
+    fileName = `${
+      store.selectedItem?.name
+    }_${store.selectedItem?.color?.toLowerCase()}.png`;
   } else {
+    // No color selected, show default
     fileName = `${store.selectedItem?.name}_default.png`;
   }
 

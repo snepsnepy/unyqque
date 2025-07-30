@@ -52,13 +52,19 @@
 
   <!-- Logo -->
   <div
-    class="relative flex flex-col items-center justify-center h-[50px] pb-10"
+    class="relative flex flex-col items-center justify-center h-[50px] pb-14"
   >
     <span
-      class="absolute -top-10 md:relative md:top-0 text-xs font-delight font-black text-base-content"
+      class="absolute -top-12 text-xs font-delight font-medium text-base-content"
       >POWERED BY</span
     >
-    <img src="@/assets/img/snep-09.svg" alt="snep-software" class="w-48" />
+    <a href="https://www.linkedin.com/in/savulescumihnea/" target="_blank">
+      <img
+        src="@/assets/img/snep-09.svg"
+        alt="snep-software"
+        class="w-48 md:w-56"
+      />
+    </a>
   </div>
 </template>
 

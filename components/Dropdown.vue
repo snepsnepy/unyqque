@@ -37,9 +37,10 @@
       }"
     >
       <ul
-        class="max-h-48 overflow-y-auto rounded-lg"
+        class="max-h-48 overflow-y-auto rounded-lg no-scrollbar"
         :class="{
-          'rounded-none': items[0] === '2XS',
+          'rounded-none': items[0] === 'XS',
+          'rounded-b-lg': items[items.length - 1] === '3XL',
         }"
       >
         <li
@@ -57,7 +58,7 @@
           v-if="isOpen && !isColorPicker && !isDesignColorPicker"
           class="absolute bottom-full w-full left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-3 py-1 rounded-t-lg shadow-lg"
         >
-          More sizes available
+          Scroll for more sizes
         </div>
       </transition>
     </div>

@@ -113,7 +113,7 @@
     <!-- Proceed to Checkout -->
     <button
       @click="emit('proceededToCheckout')"
-      class="btn border-none whitespace-nowrap font-delight font-light shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-neutral hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
+      class="btn border-none whitespace-nowrap font-delight font-light shadow-none w-full p-3.5 bg-primary hover:bg-base-content text-base-content hover:text-neutral disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
     >
       Proceed to Checkout
     </button>

@@ -20,7 +20,9 @@
           @click.stop="downloadImage"
         >
           <div class="flex items-center flex-row gap-x-2">
-            <span class="text-md font-neue">Download</span>
+            <span class="text-2xl leading-6 font-delight font-black uppercase"
+              >Download</span
+            >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"

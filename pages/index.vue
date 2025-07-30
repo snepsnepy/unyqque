@@ -4,9 +4,7 @@
     <div class="flex-1"></div>
 
     <!-- Main content centered -->
-    <section
-      class="flex flex-col gap-y-8 md:flex-row items-center justify-evenly"
-    >
+    <section class="flex flex-col md:flex-row items-center justify-evenly">
       <NuxtImg
         :src="heroImageUrl"
         alt="Hero image"
@@ -30,11 +28,11 @@
     <div class="flex-1"></div>
 
     <footer
-      class="flex flex-col items-center md:flex-row gap-x-2 font-delight text-lg leading-5 md:text-4xl text-base-content font-medium justify-center pb-4"
+      class="flex flex-row items-center md:flex-row gap-x-2 font-delight text-sm leading-5 md:text-4xl text-base-content font-medium justify-center pb-4"
     >
-      <span>automotive design</span>
+      automotive design
       <span class="font-black">&</span>
-      <span>engineering</span>
+      engineering
     </footer>
   </section>
 </template>

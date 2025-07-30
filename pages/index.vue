@@ -1,7 +1,7 @@
 <template>
   <section class="flex flex-col h-full">
     <!-- Spacer to push content to center -->
-    <div class="flex-1"></div>
+    <div class="md:flex-1"></div>
 
     <!-- Main content centered -->
     <section class="flex flex-col md:flex-row items-center justify-evenly">
@@ -28,7 +28,7 @@
     <div class="flex-1"></div>
 
     <footer
-      class="flex flex-row items-center md:flex-row gap-x-2 font-delight text-sm leading-5 md:text-4xl text-base-content font-medium justify-center pb-4"
+      class="flex flex-row items-center md:flex-row gap-x-1 font-delight text-sm leading-5 md:text-4xl text-base-content font-medium justify-center pb-4"
     >
       automotive design
       <span class="font-black">&</span>

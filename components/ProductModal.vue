@@ -12,13 +12,13 @@
         </button>
       </div>
 
-      <div class="flex flex-col gap-y-4 md:gap-y-4 pt-8">
+      <div class="flex flex-col gap-y-2 md:gap-y-4 pt-8">
         <!-- Product Image -->
         <div class="flex justify-center">
           <NuxtImg
             :src="imageUrl"
             alt="product"
-            class="w-full object-contain rounded-lg"
+            class="w-[90%] md:w-full object-contain rounded-lg"
             quality="90"
             format="webp"
             sizes="sm:300px md:400px lg:500px"
@@ -71,12 +71,29 @@
           >
             Description
           </p>
-          <p
-            class="text-base-content/50 text-xs leading-[14px] font-delight font-light tracking-wider"
+          <div
+            class="text-base-content/50 text-xs leading-[14px] font-delight font-light tracking-wider space-y-2"
           >
-            Oversized tshirt 100% cotton oversized fit. We recomment ordering
-            the same size as usual or a biffer one for the perfect fit.
-          </p>
+            <p>
+              Premium heavyweight tee with a relaxed fit and dropped shoulders,
+              made from 100% organic cotton. Features high-quality designs
+              printed into the fabric, built to last an eternity.
+            </p>
+
+            <ul class="list-disc pl-5">
+              <li>
+                <p>
+                  Order one size smaller than usual for the perfect relaxed fit.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Order two sizes smaller than usual for a more regular, classic
+                  fit.
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Buttons -->

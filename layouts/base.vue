@@ -7,7 +7,7 @@
 
     <!-- Content layer -->
     <section
-      class="relative z-10 flex flex-col flex-grow gap-8 h-dvh container mx-auto overflow-scroll no-scrollbar"
+      class="relative z-10 flex flex-col flex-grow gap-4 md:gap-8 h-dvh container mx-auto overflow-scroll no-scrollbar"
     >
       <Navigation />
       <slot />

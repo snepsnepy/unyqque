@@ -7,7 +7,7 @@
         <p
           class="text-base-content text-2xl md:text-6xl font-medium font-delight whitespace-nowrap"
         >
-          phone <span class="font-black">:</span>
+          phone<span class="font-black">:</span>
         </p>
         <a
           href="tel:+40738950590"

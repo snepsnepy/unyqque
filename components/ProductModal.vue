@@ -75,26 +75,24 @@
             class="text-base-content/50 text-xs leading-[14px] font-delight font-light tracking-wider space-y-2"
           >
             <p>
-              Premium heavyweight tee and DTG print with a relaxed fit and
-              dropped shoulders, made from 100% organic cotton.
+              Premium heavyweight tee with a relaxed fit and dropped shoulders,
+              made from 100% organic cotton. Features high-quality designs
+              printed into the fabric, built to last an eternity.
             </p>
-            <div class="space-y-1">
-              <span>Sizes and fit:</span>
-              <ul class="list-disc pl-5">
-                <li>
-                  <p>
-                    Order one size smaller than usual for the perfect relaxed
-                    fit.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Order two sizes smaller than usual for a more regular,
-                    classic fit.
-                  </p>
-                </li>
-              </ul>
-            </div>
+
+            <ul class="list-disc pl-5">
+              <li>
+                <p>
+                  Order one size smaller than usual for the perfect relaxed fit.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Order two sizes smaller than usual for a more regular, classic
+                  fit.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
 

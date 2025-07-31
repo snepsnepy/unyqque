@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col md:flex-row justify-between mt-10">
+  <div class="flex flex-col md:flex-row justify-between pt-4 md:pt-10">
     <button
       @click="moveTo('/gallery')"
       :class="getActiveClass('/gallery')"

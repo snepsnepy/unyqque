@@ -102,7 +102,7 @@
             <button
               @click="addItemAndClose()"
               :disabled="!hasSelectedValues"
-              class="btn border-none font-delight font-light shadow-none w-full py-3.5 px-2 bg-base-content/85 hover:bg-primary text-neutral hover:text-base-content disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
+              class="btn border-none font-delight font-light shadow-none w-full py-3.5 px-2 bg-base-content hover:bg-primary text-neutral hover:text-base-content disabled:!bg-white/20 disabled:text-black/50 rounded-xl"
             >
               Add to Cart
             </button>

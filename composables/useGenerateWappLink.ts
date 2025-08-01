@@ -18,7 +18,7 @@ export const useGenerateWappLink = (
         itemDetails += `\n  *Design Color:* ${item.designColor}`;
       }
 
-      itemDetails += `\n  *Size:* ${item.size}\n  *Price:* ${item.price}\n`;
+      itemDetails += `\n  *Size:* ${item.size}\n  *Price:* ${item.price} RON\n`;
 
       return itemDetails;
     })
@@ -33,13 +33,13 @@ export const useGenerateWappLink = (
   *Name:* ${personalInfo.fullName}  
   *Address:* ${personalInfo.address}  
   *Phone:* ${personalInfo.cellPhoneNo}  
-  *Phone:* ${personalInfo.email}  
+  *Email:* ${personalInfo.email}  
 `;
 
   // Full message
-  const message = `*New Order Request* \n\n${itemsMessage}\n${customerDetails}\n*Total Price (including fees):* ${totalPrice.toFixed(
+  const message = `*NEW ORDER REQUEST* \n\n${itemsMessage}\n${customerDetails}\n*Total Price (including fees):* ${totalPrice.toFixed(
     2
-  )} RON \n\nThank you for your order! Your order will be confirmed shortly. We appreciate your patience and will update you as soon as possible.`;
+  )} RON`;
 
   // Encode message for URL
   const encodedMessage = encodeURIComponent(message);
